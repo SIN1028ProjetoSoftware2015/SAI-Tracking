@@ -27,44 +27,42 @@
 
 <!-- Custom styles for this template -->
 <link href="assets/css/carousel.css" rel="stylesheet">
+<link href="assets/css/custom-styles.css" rel="stylesheet">
 </head>
 <body>
-  <nav class="navbar navbar-inverse">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Projeto SAI</a>
+  <!-- Barra de navegação geral -->
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Projeto SAI</a>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#informacoes">Informações</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cadastro<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="Formulario_UFSM_Fora_Parte1.html">Aluno indo para intercambio</a></li>
+              <li><a href="#">Aluno chegando para intercambio</a></li>
+            </ul>
+          </li>
+        </ul>
+        <!-- parte direita da navbar -->
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="login_view.html">Login</a></li>
+          <li><a href="#">Sair</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
     </div>
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#about">Informações</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cadastro<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="Formulario_UFSM_Fora_Parte1.html">Aluno indo para intercambio</a></li>
-            <li><a href="#">Aluno chegando para intercambio</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Relatórios<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Alunos em intercambio</a></li>
-            <li><a href="#">Alunos finalizaram intercambio</a></li>
-          </ul>
-        </li>
-      </ul>
-      <!-- parte direita da navbar -->
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="login_view.html">Login</a></li>
-        <li><a href="#">Sair</a></li>
-      </ul>
-    </div>
-  </nav>
+  </nav><!-- fim da barra de navegacao -->
+
   <div class="container">
     <div class="row">
       <div class="col-md-12">
@@ -74,6 +72,7 @@
       </div>
     </div>
     <div class="row">
+      <!-- Formulário centralizado ocupando 8 colunas e 2 em cada lado de offset -->
       <div class="col-md-8 col-md-offset-2">
         <form action="" class="form-horizontal">
           <!-- Text input-->
@@ -197,7 +196,7 @@
 <!-- Bootstrap core JavaScript
   ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/bootstrap.min.js"></script>
   <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
   <script src="assets/js/vendor/holder.min.js"></script>
