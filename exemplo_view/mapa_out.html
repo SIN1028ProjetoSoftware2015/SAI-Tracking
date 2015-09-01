@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
   <meta name="description" content="">
   <meta name="author" content="">
@@ -28,9 +29,14 @@
 <!-- Custom styles for this template -->
 <link href="assets/css/carousel.css" rel="stylesheet">
 <link href="assets/css/custom-styles.css" rel="stylesheet">
+<style>
+  #map-out{
+    height: 500px;
+  }
+</style>
 </head>
 <body>
-  <!-- Barra de navega��o geral -->
+  <!-- Barra de navegação geral -->
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
@@ -67,136 +73,20 @@
 		<div class="row">
       <div class="col-md-12">
         <div id="pagina-cabecalho" class="page-header">
-          <h1>Demonstracao de alunos que estao fazendo mestrado fora da UFSM</h1>
+          <h1>Alunos da UFSM em intercâmbio</h1>
         </div>
       </div>
 		</div>
 		<div class="row">
-      <!-- Formul�rio centralizado ocupando 8 colunas e 2 em cada lado de offset -->
-      <div class="col-md-8 col-md-offset-2">
-        <form action="" class="form-horizontal">
+      <div class="col-md-3">Aqui podem ser incluídas informações com ícones e dados sobre a quantidade
+      de estudantes no exterior. Um infográfico dinâmico por exemplo.</div>
+      <div class="col-md-9">
+        <div id="map-out">
           
-          <!-- Text input-->
-		<div class="form-group">
-	  <label class="col-md-4 control-label" for="radios">Filtros</label>
-		  <div class="col-md-6"> 
-			<label class="radio-inline" for="radios-0">
-			  <input type="radio" name="radios" id="radios-0" value="1" checked="checked">
-			  Filtro 1
-			</label> 
-			<label class="radio-inline" for="radios-1">
-			  <input type="radio" name="radios" id="radios-1" value="2">
-			  Filtro 2
-			</label> 
-			<label class="radio-inline" for="radios-2">
-			  <input type="radio" name="radios" id="radios-2" value="3">
-			  Filtro 3
-			</label>
-			<label class="radio-inline" for="radios-3">
-			  <input type="radio" name="radios" id="radios-3" value="4">
-			  Filtro 4 
-			</label> 
-			<label class="radio-inline" for="radios-4">
-			  <input type="radio" name="radios" id="radios-4" value="5">
-			  Filtro 5
-			</label> 
-			<label class="radio-inline" for="radios-5">
-			  <input type="radio" name="radios" id="radios-5" value="6">
-			  Filtro 6
-			</label>
-			<label class="radio-inline" for="radios-5">
-			  <input type="radio" name="radios" id="radios-5" value="6">
-			  Filtro 7
-			</label>
-			<label class="radio-inline" for="radios-5">
-			  <input type="radio" name="radios" id="radios-5" value="6">
-			  Filtro 8
-			</label>
-			</div>
-		</div>
-
-          <!-- Button -->
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="singlebutton"></label>
-            <div class="col-md-4">
-              <a button href="#" id="singlebutton" name="singlebutton" class="btn btn-success">OK</button>
-              </a>
-            </div>
-          </div>
-        </form>
+        </div>
       </div>
-	 
-    </div><!-- /.container -->
-	<form class="form-horizontal">
-<fieldset>
-
-<!-- Form Name -->
-<legend>Tipos de filtros</legend>
-
-<!-- Select Basic -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="selectbasic">Selecione 1</label>
-  <div class="col-md-4">
-    <select id="selectbasic" name="selectbasic" class="form-control">
-      <option value="1">Filtro 1</option>
-      <option value="2">Filtro 2</option>
-    </select>
+    </div>
   </div>
-</div>
-
-<!-- Select Multiple -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="selectmultiple">Selecao Multipla</label>
-  <div class="col-md-4">
-    <select id="selectmultiple" name="selectmultiple" class="form-control" multiple="multiple">
-      <option value="1">Filtro 1</option>
-      <option value="2">Filtro 2</option>
-    </select>
-  </div>
-</div>
-
-<!-- Multiple Checkboxes -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="checkboxes">Varias caixas de selecao</label>
-  <div class="col-md-4">
-  <div class="checkbox">
-    <label for="checkboxes-0">
-      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
-      Filtro 1
-    </label>
-	</div>
-  <div class="checkbox">
-    <label for="checkboxes-1">
-      <input type="checkbox" name="checkboxes" id="checkboxes-1" value="2">
-      Filtro 2
-    </label>
-	</div>
-  </div>
-</div>
-
-<!-- Multiple Radios -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="radios">Varios</label>
-  <div class="col-md-4">
-  <div class="radio">
-    <label for="radios-0">
-      <input type="radio" name="radios" id="radios-0" value="1" checked="checked">
-      Filtro 1
-    </label>
-	</div>
-  <div class="radio">
-    <label for="radios-1">
-      <input type="radio" name="radios" id="radios-1" value="2">
-      Filtro 2
-    </label>
-	</div>
-  </div>
-</div>
-
-</fieldset>
-</form>
-
-  
 
 <!-- FOOTER -->
 <footer>
@@ -214,5 +104,8 @@
   <script src="assets/js/vendor/holder.min.js"></script>
   <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
   <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+  <!-- Javascript paga geração do mapa com informações sobre os alunos no exterior -->
+  <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+  <script src="assets/js/googlemaps-out.js"></script>
 </body>
 </html>
