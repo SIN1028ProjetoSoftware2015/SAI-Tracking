@@ -22,7 +22,7 @@ function initMap(){
 
 function geocodeAddress(geocoder, resultsMap) {
 	var lineSymbol = {
-	    path: google.maps.SymbolPath.FORWARD_OPEN_ARROW
+	    path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW
 	};
 	var icon_student = 'assets/img/student_filled.png';
 	for (var i = jsonPaises.length - 1; i >= 0; i--) {
@@ -34,7 +34,7 @@ function geocodeAddress(geocoder, resultsMap) {
 					path: [{lat: -29.6880527, lng: -53.8165283}, latLngPais],
 					icons: [{
 						icon: lineSymbol,
-						offset: '100%'
+						offset: '95%'
 					}],
 					strokeColor: '#356AA0',
 					strokeOpacity: 0.95,
