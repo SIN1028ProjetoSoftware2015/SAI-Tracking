@@ -45,10 +45,16 @@ function geocodeAddress(geocoder, resultsMap) {
 					position: latLngPais,
 					map: resultsMap,
 					icon: icon_student
+					
 				});
+				
+					
+				
 		    } else {
 		      alert('Geocode was not successful for the following reason: ' + status);
 		    }
 		});
 	}
+	
 }
+
