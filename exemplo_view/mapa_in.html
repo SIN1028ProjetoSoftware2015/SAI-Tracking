@@ -15,6 +15,7 @@
 
   <!-- Bootstrap core CSS -->
   <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/jquery-birthday-picker.css" rel="stylesheet">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
@@ -69,14 +70,60 @@
       </div>
 		</div>
 		<div class="row">
-      <div class="col-md-3">Aqui podem ser incluídas informações com ícones e dados sobre a quantidade
-      de estudantes no exterior. Um infográfico dinâmico por exemplo.</div>
+        <div class="col-md-3"> 
+        <h5>Modalidade:</h5>
+          	<form>
+          		<div class="checkbox">
+          		<label>
+          			<input type="checkbox">Gradução
+          		</label> 	
+          		</div>
+          		<div class="checkbox">
+          		<label>
+          			<input type="checkbox">Especialização
+          		</label> 	
+          		</div>
+          		<div class="checkbox">
+          		<label>
+          			<input type="checkbox">Mestrado
+          		</label> 	
+          		</div>
+          		<div class="checkbox">
+          		<label>
+          			<input type="checkbox">Doutorado
+          		</label> 	
+          		</div>
+          		<div class="checkbox">
+          		<label>
+          			<input type="checkbox">Pós-Gradução
+          		</label> 	
+          		</div>
+          		<div class="checkbox">
+          		<label>
+          			<input type="checkbox">Estágio
+          		</label> 	
+          		</div>
+          	</form>
+          	<!--campos para selecionar as datas -->
+          	<div class="span1">
+			<h5>Data Início</h5>
+			<div id="birthdayPicker"></div>
+			</div>
+			<div class="span2">
+			<h5>Data Final</h5>
+			<div id="birthdayPicker1"></div>
+			</div>
+		 </div>
+    
       <div class="col-md-9">
         <div id="map-in">
           
         </div>
       </div>
     </div>
+
+	
+
     <!-- FOOTER -->
     <hr class="featurette-divider">
     <footer>
@@ -95,5 +142,15 @@
   <!-- Javascript paga geração do mapa com informações sobre os alunos no exterior -->
   <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
   <script src="assets/js/googlemaps-in.js"></script>
+  <!--Javascript para poder selecionar datas -->
+  <script src="assets/js/jquery-birthday-picker.js"></script>
+        
+  <!--script para mostrar campo de datas -->
+  <script type="text/javascript">
+  $("#birthdayPicker").birthdayPicker();
+  $("#birthdayPicker1").birthdayPicker();
+
+
+</script>
 </body>
 </html>
