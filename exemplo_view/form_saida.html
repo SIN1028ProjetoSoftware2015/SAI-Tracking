@@ -14,6 +14,7 @@
 
   <!-- Bootstrap core CSS -->
   <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
@@ -219,11 +220,126 @@
         </div>
 			</div>
             <div class="tab-pane" id="tab3">
-			3
-			</div>
+			<h2>Plano de Atividades no exterior</h2>
+<hr /> 
+<br /><br />
+<div class="table-responsive">
+
+ <table id="products-table" class="table table-hover table-bordered">
+  <tbody>
+  <tr>
+     <th>Sem./ano</th>
+     <th>Codigo/Disciplina</th>
+     <th>Creditos/Carga Horaria</th>
+     <th>Codigo/Disciplina</th>
+     <th>Creditos/Carga Horaria</th>
+     <th class="actions">Ações</th>
+   </tr>
+   <tr>
+     <td><input type="text" name="Sem_ano"></td>
+                          <td><input type="text" name="cod_disc"></td>
+      <td><input type="text" name="Cred_carg"></td>
+                        <td><input type="text" name="Cod_disc_2"></td>
+   <td><input type="text" name="Cred_carg_2"></td>  
+   <td class="actions">
+      <button class="btn btn-large btn-danger" onclick="RemoveTableRow(this)" type="button">Remover</button>
+   </td>
+  </tr>
+  </tbody>
+                <tfoot>
+  <tr>
+      <td colspan="6" style="text-align: left;">
+          <button class="btn btn-large btn-success" onclick="AddTableRow(this)" type="button">Adicionar linha</button>
+      </td>
+  </tr>
+  </tfoot>
+ </table>
+</div>
+<hr /> 
+<br /><br />
+<p>Caso o semestre letivo <strong> não estiver concluído</strong> no início da viagem preencha o quadro abaixo informando se será possível realizar provas antecipadas.</p>
+<p><strong>Lembre-se: a decisão sobre a antecipação de avaliação é competência exclusiva do professor, desde que atendido o mínimo de 75% das aulas lecionadas.</strong></p>
+<p>Caso pertinente, relacione as disciplinas no quadro a seguir e colha a assinatura do professor responsável.</p>
+
+<div class="table-responsive">
+
+ <table id="produto-tabela" class="table table-hover table-bordered">
+  <tbody>
+  <tr>
+     <th>Código da disciplina</th>
+     <th>Nome da disciplina</th>
+     <th>Antecipação de avaliação (sim*/não)</th>
+     <th>De acordo do professor*</th>
+     <th class="actions">Ações</th>
+   </tr>
+   <tr>
+     <td><input type="text" name="cod"></td>
+                          <td><input type="text" name="nome"></td>
+      <td><input type="text" name="ant"></td>
+                        <td><input type="text" name="prof"></td>
+   
+   <td class="actions">
+      <button class="btn btn-large btn-danger" onclick="RemoveTableRow(this)" type="button">Remover</button>
+   </td>
+  </tr>
+  </tbody>
+                <tfoot>
+  <tr>
+      <td colspan="6" style="text-align: left;">
+          <button class="btn btn-large btn-success" onclick="AddRow(this)" type="button">Adicionar linha</button>
+      </td>
+  </tr>
+  </tfoot>
+ </table>
+</div>
+</div>
+
+
             <div class="tab-pane" id="tab4">
-			4
-			
+			<div class="table-responsive">
+
+ <table id="produto-tabela" class="table table-hover table-bordered">
+  <tbody>
+  <p>*<strong>LEMBRE-SE:</strong>a matricula e de responsabilidade do aluno e necessita ser a cada semestre. Observe o calendario!</p>
+  <tr>
+     <th>Assinatura do aluno:</th>
+     <th>data___/___/___</th>
+   </tr>
+  </tbody>            
+ </table>
+</div>
+<div class="table-responsive">
+ <table id="produto-tabela" class="table table-hover table-bordered">
+  <tbody>
+  <tr>
+     <th>Coordenador do curso na UFSM:</th>
+   </tr>
+  </tbody>            
+ </table>
+</div>
+<div class="table-responsive">
+ <table id="produto-tabela" class="table table-hover table-bordered">
+  <tbody>
+  <tr>
+     <th><strong>SAI &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp </strong></th>
+     <th><strong>PROGRAD</strong></th>
+   </tr>
+  </tbody>            
+ </table>
+</div>
+
+<br></br>
+<div class="table-responsive">
+ <table id="produto-tabela" class="table table-hover table-bordered">
+  <tbody>
+ <tr>
+	  <th>assinatura &nbsp &nbsp   &nbsp &nbsp &nbsp &nbsp data  &nbsp &nbsp   &nbsp &nbsp  &nbsp &nbsp  carimbo</th>
+	  <th>assinatura &nbsp &nbsp   &nbsp &nbsp &nbsp &nbsp data  &nbsp &nbsp   &nbsp &nbsp &nbsp &nbsp   carimbo</th>
+   </tr>
+  </tbody>            
+ </table>
+</div>
+<p>*Deverão ser feitas duas vias deste documento (01 para PROGRAD; 01 para SAI)</p>	
 			<div class="form-group">
                 <div class="row">
                   <div class="col-md-6 col-md-offset-6">
@@ -257,6 +373,7 @@
   <script src="assets/js/bootstrap.min.js"></script>
   <script src="assets/js/jquery.bootstrap.wizard.min.js"></script>
   <script src="assets/js/wizard-custom.js"></script>
+  <script src="assets/js/funcao.js"></script> 
   <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
   <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
 </body>
