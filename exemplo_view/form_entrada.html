@@ -329,6 +329,47 @@
 
             </div>
             <div class="tab-pane" id="tab5">
+			  <h2>Disciplinas /atividades a serem realizadas:</h2>
+<br /><br />
+<div class="table-responsive">
+
+ <table id="products-table" class="table table-hover table-bordered">
+  <tbody>
+  <tr>
+     <th>Sem./ano</th>
+     <th>Codigo/Nome Disciplina</th>
+     <th>Creditos/Carga Horaria</th>
+     <th>Codigo/Nome Disciplina</th>
+     <th>Creditos/Carga Horaria</th>
+     <th class="actions">Ações</th>
+   </tr>
+   <tr>
+     <td><input type="text" name="Sem_ano"></td>
+                          <td><input type="text" name="cod_disc"></td>
+      <td><input type="text" name="Cred_carg"></td>
+                        <td><input type="text" name="Cod_disc_2"></td>
+   <td><input type="text" name="Cred_carg_2"></td>  
+   <td class="actions">
+      <button class="btn btn-large btn-danger" onclick="RemoveTableRow(this)" type="button">Remover</button>
+   </td>
+  </tr>
+  </tbody>
+                <tfoot>
+  <tr>
+      <td colspan="6" style="text-align: left;">
+          <button class="btn btn-large btn-success" onclick="AddTableRow(this)" type="button">Adicionar linha</button>
+      </td>
+  </tr>
+  </tfoot>
+ </table>
+</div>
+			  
+			  
+			  
+			  
+			  
+            </div>
+            <div class="tab-pane" id="tab6">
               <h3>Dados após chegada ao Brasil</h3>
               <!-- Text input-->
               <div class="form-group">
@@ -360,9 +401,6 @@
                   <input id="rne" name="rne" type="text" placeholder="" class="form-control input-md" required="">
                 </div>
               </div>
-            </div>
-            <div class="tab-pane" id="tab6">
-              6
             </div>
             <div class="tab-pane" id="tab7">
               <h3>Anexar documentos</h3>
@@ -473,6 +511,7 @@
   <script src="assets/js/bootstrap.min.js"></script>
   <script src="assets/js/jquery.bootstrap.wizard.min.js"></script>
   <script src="assets/js/wizard-custom.js"></script>
+  <script src="assets/js/funcao.js"></script> 
   <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
   <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
 </body>
