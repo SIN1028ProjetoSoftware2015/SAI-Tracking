@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.png">
+
+    <title>Off Canvas Push Menu Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+   <!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/jasny-bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="navmenu-push.css" rel="stylesheet">
+    <link href="assets/css/navmenu-push.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <bodyd>
+    <div class="navmenu navmenu-default navmenu-fixed-left offcanvas">
+       <a class="navmenu-brand" href="#">Intercâmbio</a>
+     <ul class="nav navmenu-nav">
+        <div class="row">
+        <div class="col-md-3"> 
+        <h5>Modalidade:</h5>
+            <form>
+              <div class="checkbox">
+              <label>
+                <input type="checkbox">Gradução
+              </label>  
+              </div>
+              <div class="checkbox">
+              <label>
+                <input type="checkbox">Especialização
+              </label>  
+              </div>
+              <div class="checkbox">
+              <label>
+                <input type="checkbox">Mestrado
+              </label>  
+              </div>
+              <div class="checkbox">
+              <label>
+                <input type="checkbox">Doutorado
+              </label>  
+              </div>
+              <div class="checkbox">
+              <label>
+                <input type="checkbox">Pós-Gradução
+              </label>  
+              </div>
+              <div class="checkbox">
+              <label>
+                <input type="checkbox">Estágio
+              </label>  
+              </div>
+               <h5>Alunos intercâmbio:</h5>
+              <div class="checkbox">
+              <label>
+                <input type="checkbox">Alunos em intercâmbio
+              </label>  
+              </div>
+
+              <html>
+        <body>
+        <h5>Intervalo de anos</h5>
+        <h5>Ano Inicial:</h5>
+        <select id="anoinicial" name="anoinicial">
+        <option>Selecione ano</option>
+          <script>
+          var myDate = new Date();
+          var anoinicial = myDate.getFullYear();
+          for(var i = 1940; i < anoinicial+1; i++){
+          document.write('<option value="'+i+'">'+i+'</option>');
+          }
+          </script>
+        </select>
+        </body>
+        </html>
+        <html>
+        <body>
+        <h5>Ano Final:</h5>
+        <select id="anofinal" name="anofinal">
+        <option>Selecione ano</option>
+          <script>
+          var myDate = new Date();
+          var anofinal = myDate.getFullYear();
+          for(var i = 1940; i < anofinal+1; i++){
+          document.write('<option value="'+i+'">'+i+'</option>');
+          }
+          </script>
+        </select>
+        </body>
+        </html>
+              </form>
+              <br />
+              <label> </label>
+         <input class="btn" type="submit" value="Pesquisar">
+     
+      </div>
+    </div>
+    </div>
+    
+    <!--desenha o icone pra puxar o menu lateral -->
+    <div class="navbar navbar-default navbar-fixed-left">
+      <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".navmenu" data-canvas="body">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    </ul>
+    <div class="container">
+      <div class="page-header">
+        <h1>Off Canvas Push Menu Template</h1>
+      </div>
+      
+    </div><!-- /.container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+   <!-- <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jasny-bootstrap.min.js"></script>
+    <script src="assets/js/offcanvas.js"></script>
+  </body>
+</html>

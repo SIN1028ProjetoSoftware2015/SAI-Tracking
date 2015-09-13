@@ -15,7 +15,11 @@
 
   <!-- Bootstrap core CSS -->
   <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/css/jquery-birthday-picker.css" rel="stylesheet">
+  <link href="assets/css/jasny-bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+   <link href="navmenu-push.css" rel="stylesheet">
+    <link href="assets/css/navmenu-push.css" rel="stylesheet">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
@@ -28,8 +32,8 @@
 <link href="assets/css/custom-styles.css" rel="stylesheet">
 </head>
 <body>
-  <!-- Barra de navegação geral -->
-  <nav class="navbar navbar-inverse navbar-fixed-top">
+   <!-- Barra de navegação geral -->
+  <nav class="navbar navbar-inverse navbar-static-top">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -61,16 +65,19 @@
     </div>
   </nav><!-- fim da barra de navegacao -->
 
-	<div class="container">
-		<div class="row">
+  <div class="container">
+    <div class="row">
       <div class="col-md-12">
         <div id="pagina-cabecalho" class="page-header">
           <h1>Alunos da UFSM em intercâmbio</h1>
         </div>
       </div>
-		</div>
-		<div class="row">
-        <div class="col-md-2"> 
+    </div>
+    <div class="navmenu navmenu-default navmenu-fixed-left offcanvas">
+       <a class="navmenu-brand" href="#">Intercâmbio</a>
+     <ul class="nav navmenu-nav">
+        <div class="row">
+        <div class="col-md-3"> 
         <h5>Modalidade:</h5>
             <form>
               <div class="checkbox">
@@ -145,9 +152,19 @@
               <br />
               <label> </label>
          <input class="btn" type="submit" value="Pesquisar">
-
-
-     </div>
+   </div>
+    </div>
+    </div>
+    
+    <!--desenha o icone pra puxar o menu lateral -->
+    <div class="navbar navbar-default navbar-fixed-left">
+      <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".navmenu" data-canvas="body">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    </ul>
     
       <div class="col-md-10">
         <div id="map-in">
@@ -156,7 +173,7 @@
       </div>
     </div>
 
-	
+  
 
     <!-- FOOTER -->
     <hr class="featurette-divider">
@@ -165,6 +182,8 @@
       <p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
     </footer>
   </div><!-- /.container -->
+
+
 
 <!-- Bootstrap core JavaScript
   ================================================== -->
@@ -176,8 +195,9 @@
   <!-- Javascript paga geração do mapa com informações sobre os alunos no exterior -->
   <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
   <script src="assets/js/googlemaps-in.js"></script>
-  <!--Javascript para poder selecionar datas -->
-  
+  <!--Javascript para poder selecionar datas-->
+  <script src="assets/js/jasny-bootstrap.min.js"></script>
+
 
 </script>
 </body>
