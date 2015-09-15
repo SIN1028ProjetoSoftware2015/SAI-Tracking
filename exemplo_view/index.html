@@ -21,7 +21,6 @@
     <!-- Custom styles for this template -->
     <link href="assets/css/carousel.css" rel="stylesheet">
     <link href="assets/css/custom-styles.css" rel="stylesheet">
-	<script src="Chart.min.js"></script>
   </head>
   <body>
     <!-- Barra de navegação geral -->
@@ -141,18 +140,18 @@
 
     <div class="container graficos">
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-8 col-md-offset-2">
           <div class="box-chart">
             <h3>Universidades mais procuradas</h3>
-            <canvas id="GraficoBarra" style="width:100%;"></canvas>
+            <canvas id="GraficoBarra" height="250"></canvas>
           </div>
         </div>
       </div>
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-8 col-md-offset-2">
           <div class="box-chart">
             <h3>Países que mais recebem intercambistas/ou Intercambistas que vem à UFSM</h3>
-            <canvas id="GraficoBarra2" style="width:100%;"></canvas>
+            <canvas id="GraficoBarra2" height="200"></canvas>
           </div>
         </div>
       </div>
@@ -178,6 +177,7 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
     <!-- Chart script. Remove to external file soon as possible -->
+    <script src="Chart.min.js"></script>
     <script type="text/javascript">
       var options = {
         responsive:true
