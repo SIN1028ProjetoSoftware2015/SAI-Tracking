@@ -22,41 +22,45 @@
   <body>
     <div class="container-fluid">
         <div class="container utility-bar">
-           <!-- barra utilidades traducao e login -->
-            <div class="row" id="utilidades">
-                <div class="col-xs-6 col-md-2 col-md-offset-8 text-right">
-                    <a href="#">Login</a>
-                </div>
-                <div class="col-xs-6 col-md-2">
-                    <div class="dropdown noselect" id="downdown-lang">
-                        <div class="dropdown-toggle" id="dropdown-lang-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
-                            Internacional
-                            <span class="caret"></span>
-                        </div>
-                        <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-lang-btn">
-                            <li><a href="#"><img src="images/eua_flag.bmp" alt="Translate to English"> English</a></li>
-                            <li><a href="#"><img src="images/spain_flag.bmp" alt="Tra"> Español</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <!-- fim da barra utilidades traducao e login -->
             <!-- barra com logotipo SAI e menu -->
             <div class="row">
-                <div class="col-xs-3 col-sm-2 col-md-1">
-                    <img src="images/logo_sai.png" class="img-responsive center-block" alt="Marca da Secretaria de Apoio Internacional da UFSM">
+                <div class="col-md-1">
+                    <img src="images/logo_sai.png" class="img-responsive center-block logo-sai" alt="Marca da Secretaria de Apoio Internacional da UFSM">
                 </div>
-                <div class="col-sm-9 col-sm-10 col-md-3 clearfix"><h1>Projeto SAI 2</h1></div>
-                <div class="col-sm-12 col-md-8">
-                    <nav class="navbar" id="menu-principal">
-                        <ul class="nav navbar-nav">
-                            <li class="active"><a href="#">Início</a></li>
-                            <li><a href="#">Informações</a></li>
-                            <li><a href="#">Alunos estrangeiros</a></li>
-                            <li><a href="#">Alunos brasileiros</a></li>
-                        </ul>
-                    </nav>
+                <div class="col-md-11">
+                   <!-- Login link and language menu -->
+                   <div class="row">
+                        <div class="col-md-1 col-md-offset-9 text-right">
+                            <a href="#">Login</a>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="dropdown noselect" id="downdown-lang">
+                                <div class="dropdown-toggle" id="dropdown-lang-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
+                                    Internacional
+                                    <span class="caret"></span>
+                                </div>
+                                <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-lang-btn">
+                                    <li><a href="#"><img src="images/eua_flag.bmp" alt="Translate to English"> English</a></li>
+                                    <li><a href="#"><img src="images/spain_flag.bmp" alt="Tra"> Español</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                   </div>
+                   <!-- Project name and navbar -->
+                   <div class="row">
+                        <div class="col-md-3"><h1 class="titulo-site">Projeto SAI</h1></div>
+                        <div class="col-md-9">
+                            <nav class="navbar" id="menu-principal">
+                                <ul class="nav navbar-nav">
+                                    <li class="active"><a href="#">Início</a></li>
+                                    <li><a href="#">Informações</a></li>
+                                    <li><a href="#">Alunos estrangeiros</a></li>
+                                    <li><a href="#">Alunos brasileiros</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                   </div>
                 </div>
             </div>
             <!-- fim barra com logotipo SAI e menu -->
