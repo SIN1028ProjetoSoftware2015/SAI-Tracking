@@ -51,12 +51,12 @@
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
           <li class="active"><a href="index.html">Início</a></li>
-          <li><a href="#informacoes">Informacoes</a></li>
+          <li><a href="#informacoes">Informações</a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cadastro<span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="Formulario_UFSM_Fora_Parte1.html">Aluno indo para intercambio</a></li>
-              <li><a href="#">Aluno chegando para intercambio</a></li>
+              <li><a href="Formulario_UFSM_Fora_Parte1.html">Aluno indo para intercâmbio</a></li>
+              <li><a href="#">Aluno chegando para intercâmbio</a></li>
             </ul>
           </li>
         </ul>
@@ -78,9 +78,86 @@
       </div>
 		</div>
 		<div class="row">
-      <div class="col-md-3">Aqui podem ser incluídas informações com ícones e dados sobre a quantidade
-      de estudantes no exterior. Um infográfico dinâmico por exemplo.</div>
-      <div class="col-md-9">
+       <div class="col-md-2"> 
+        <h5>Modalidade:</h5>
+            <form>
+              <div class="checkbox">
+              <label>
+                <input type="checkbox">Gradução
+              </label>  
+              </div>
+              <div class="checkbox">
+              <label>
+                <input type="checkbox">Especialização
+              </label>  
+              </div>
+              <div class="checkbox">
+              <label>
+                <input type="checkbox">Mestrado
+              </label>  
+              </div>
+              <div class="checkbox">
+              <label>
+                <input type="checkbox">Doutorado
+              </label>  
+              </div>
+              <div class="checkbox">
+              <label>
+                <input type="checkbox">Pós-Gradução
+              </label>  
+              </div>
+              <div class="checkbox">
+              <label>
+                <input type="checkbox">Estágio
+              </label>  
+              </div>
+               <h5>Alunos intercâmbio:</h5>
+              <div class="checkbox">
+              <label>
+                <input type="checkbox">Alunos em intercâmbio
+              </label>  
+              </div>
+
+              <html>
+        <body>
+        <h5>Intervalo de anos</h5>
+        <h5>Ano Inicial:</h5>
+        <select id="anoinicial" name="anoinicial">
+        <option>Selecione ano</option>
+          <script>
+          var myDate = new Date();
+          var anoinicial = myDate.getFullYear();
+          for(var i = 1940; i < anoinicial+1; i++){
+          document.write('<option value="'+i+'">'+i+'</option>');
+          }
+          </script>
+        </select>
+        </body>
+        </html>
+        <html>
+        <body>
+        <h5>Ano Final:</h5>
+        <select id="anofinal" name="anofinal">
+        <option>Selecione ano</option>
+          <script>
+          var myDate = new Date();
+          var anofinal = myDate.getFullYear();
+          for(var i = 1940; i < anofinal+1; i++){
+          document.write('<option value="'+i+'">'+i+'</option>');
+          }
+          </script>
+        </select>
+        </body>
+        </html>
+              </form>
+              <br />
+              <label> </label>
+         <input class="btn" type="submit" value="Pesquisar">
+
+
+     </div>
+    
+      <div class="col-md-10">
         <div id="map-out">
           
         </div>
