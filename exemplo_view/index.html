@@ -21,6 +21,7 @@
     <!-- Custom styles for this template -->
     <link href="assets/css/carousel.css" rel="stylesheet">
     <link href="assets/css/custom-styles.css" rel="stylesheet">
+	<script src="Chart.min.js"></script>
   </head>
   <body>
     <!-- Barra de navegação geral -->
@@ -137,6 +138,67 @@
           <p><a class="btn btn-default" href="form_saida.html" role="button">Aluno da UFSM em intercâmbio &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
+	  <div class="box-chart">
+		<h3>Universidades mais procuradas</h3>
+            <canvas id="GraficoBarra" style="width:100%;"></canvas>
+
+            <script type="text/javascript">
+				var options = {
+                    responsive:true
+                };
+
+                var data = {
+                    labels: ["Kansas State University", "The University of Nottingham", "Universitat de Barcelona", "Karlstads Universitet", "Université d'Orléans", "University of British Columbia", "University of Cambridge", "Universitá Degli Studi di Milano", "Queens University", "Universidad Politécnica de Madrid"],
+                    datasets: [
+                        {
+                            label: "Dados primários",
+                            fillColor: "rgba(220,220,220,0.5)",
+                            strokeColor: "rgba(220,220,220,0.8)",
+                            highlightFill: "rgba(220,220,220,0.75)",
+                            highlightStroke: "rgba(220,220,220,1)",
+                            data: [70, 65, 62, 60, 57, 53, 51, 49, 46, 42]
+                        },
+                        
+                    ]
+                };                
+
+                window.onload = function(){
+                    var ctx = document.getElementById("GraficoBarra").getContext("2d");
+                    var BarChart = new Chart(ctx).Bar(data, options);
+                }           
+            </script>
+		</div>
+     <div class="box-chart">
+		<h3>Países que mais recebem intercambistas/ou Intercambistas que vem à UFSM</h3>
+            <canvas id="GraficoBarra2" style="width:100%;"></canvas>
+
+            <script type="text/javascript">
+				var options2 = {
+                    responsive:true
+                };
+
+                var data2 = {
+                    labels: ["Estados Unidos", "Reino Unido", "Canadá", "Espanha", "Portugal", "França", "Chile", "Alemanha", "Bélgica", "Colômbia"],
+                    datasets: [
+                        {
+                            label: "Dados primários",
+                            fillColor: "rgba(220,220,220,0.5)",
+                            strokeColor: "rgba(220,220,220,0.8)",
+                            highlightFill: "rgba(220,220,220,0.75)",
+                            highlightStroke: "rgba(220,220,220,1)",
+                            data: [70, 65, 62, 60, 57, 53, 51, 49, 46, 42]
+                        },
+                        
+                    ]
+                };                
+
+                window.onload = function(){
+                    var ctx2 = document.getElementById("GraficoBarra2").getContext("2d");
+                    var BarChart2 = new Chart(ctx2).Bar(data, options);
+                }           
+            </script>
+		</div>
+    </div>
       <!-- FOOTER -->
       <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
