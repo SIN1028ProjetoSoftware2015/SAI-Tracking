@@ -71,7 +71,7 @@
           <div class="container">
             <div class="carousel-caption">
               <h1>Destino UFSM</h1>
-              <p>Saiba mais sobre a UFSM</p> 
+              <p>Saiba mais sobre a UFSM</p>
               <p><a class="btn btn-lg btn-primary" href="http://site.ufsm.br/" role="button">Acessar</a></p>
             </div>
           </div>
@@ -115,7 +115,6 @@
     <!-- Wrap the rest of the page in another container to center all the content. -->
 
     <div class="container marketing">
-
       <!-- Three columns of text below the carousel -->
       <div class="row">
         <div class="col-lg-4">
@@ -138,73 +137,34 @@
           <p><a class="btn btn-default" href="form_saida.html" role="button">Aluno da UFSM em intercâmbio &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
-	  <div class="box-chart">
-		<h3>Universidades mais procuradas</h3>
-            <canvas id="GraficoBarra" style="width:100%;"></canvas>
-
-            <script type="text/javascript">
-				var options = {
-                    responsive:true
-                };
-
-                var data = {
-                    labels: ["Kansas State University", "The University of Nottingham", "Universitat de Barcelona", "Karlstads Universitet", "Université d'Orléans", "University of British Columbia", "University of Cambridge", "Universitá Degli Studi di Milano", "Queens University", "Universidad Politécnica de Madrid"],
-                    datasets: [
-                        {
-                            label: "Dados primários",
-                            fillColor: "rgba(220,220,220,0.5)",
-                            strokeColor: "rgba(220,220,220,0.8)",
-                            highlightFill: "rgba(220,220,220,0.75)",
-                            highlightStroke: "rgba(220,220,220,1)",
-                            data: [70, 65, 62, 60, 57, 53, 51, 49, 46, 42]
-                        },
-                        
-                    ]
-                };                
-
-                window.onload = function(){
-                    var ctx = document.getElementById("GraficoBarra").getContext("2d");
-                    var BarChart = new Chart(ctx).Bar(data, options);
-                }           
-            </script>
-		</div>
-     <div class="box-chart">
-		<h3>Países que mais recebem intercambistas/ou Intercambistas que vem à UFSM</h3>
-            <canvas id="GraficoBarra2" style="width:100%;"></canvas>
-
-            <script type="text/javascript">
-				var options2 = {
-                    responsive:true
-                };
-
-                var data2 = {
-                    labels: ["Estados Unidos", "Reino Unido", "Canadá", "Espanha", "Portugal", "França", "Chile", "Alemanha", "Bélgica", "Colômbia"],
-                    datasets: [
-                        {
-                            label: "Dados primários",
-                            fillColor: "rgba(220,220,220,0.5)",
-                            strokeColor: "rgba(220,220,220,0.8)",
-                            highlightFill: "rgba(220,220,220,0.75)",
-                            highlightStroke: "rgba(220,220,220,1)",
-                            data: [70, 65, 62, 60, 57, 53, 51, 49, 46, 42]
-                        },
-                        
-                    ]
-                };                
-
-                window.onload = function(){
-                    var ctx2 = document.getElementById("GraficoBarra2").getContext("2d");
-                    var BarChart2 = new Chart(ctx2).Bar(data, options);
-                }           
-            </script>
-		</div>
     </div>
-      <!-- FOOTER -->
-      <footer>
-        <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-      </footer>
 
+    <div class="container graficos">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="box-chart">
+            <h3>Universidades mais procuradas</h3>
+            <canvas id="GraficoBarra" style="width:100%;"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="box-chart">
+            <h3>Países que mais recebem intercambistas/ou Intercambistas que vem à UFSM</h3>
+            <canvas id="GraficoBarra2" style="width:100%;"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <!-- FOOTER -->
+      <div class="container">
+        <footer>
+          <p class="pull-right"><a href="#">Back to top</a></p>
+          <p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        </footer>
+      </div>
     </div><!-- /.container -->
 
 
@@ -217,5 +177,63 @@
     <script src="assets/js/vendor/holder.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+    <!-- Chart script. Remove to external file soon as possible -->
+    <script type="text/javascript">
+      var options = {
+        responsive:true
+      };
+
+      var dataSchools = {
+        labels: [
+          "Kansas State University",
+          "The University of Nottingham",
+          "Universitat de Barcelona",
+          "Karlstads Universitet",
+          "Université d'Orléans",
+          "University of British Columbia",
+          "University of Cambridge",
+          "Universitá Degli Studi di Milano",
+          "Queens University",
+          "Universidad Politécnica de Madrid"
+        ],
+        datasets: [{
+          label: "Dados primários",
+          fillColor: "rgba(220,220,220,0.5)",
+          strokeColor: "rgba(220,220,220,0.8)",
+          highlightFill: "rgba(220,220,220,0.75)",
+          highlightStroke: "rgba(220,220,220,1)",
+          data: [70, 65, 62, 60, 57, 53, 51, 49, 46, 42]
+        },]
+      };
+      var dataCountries = {
+        labels: [
+          "Estados Unidos",
+          "Reino Unido",
+          "Canadá",
+          "Espanha",
+          "Portugal",
+          "França",
+          "Chile",
+          "Alemanha",
+          "Bélgica",
+          "Colômbia"
+        ],
+        datasets: [{
+          label: "Dados primários",
+          fillColor: "rgba(220,220,220,0.5)",
+          strokeColor: "rgba(220,220,220,0.8)",
+          highlightFill: "rgba(220,220,220,0.75)",
+          highlightStroke: "rgba(220,220,220,1)",
+          data: [70, 65, 62, 60, 57, 53, 51, 49, 46, 42]
+        },]
+      };
+
+      window.onload = function(){
+        var ctx1 = document.getElementById("GraficoBarra").getContext("2d");
+        var ctx2 = document.getElementById("GraficoBarra2").getContext("2d");
+        var BarChart1 = new Chart(ctx1).Bar(dataSchools, options);
+        var BarChart2 = new Chart(ctx2).Bar(dataCountries, options);
+      }
+    </script>
   </body>
 </html>
