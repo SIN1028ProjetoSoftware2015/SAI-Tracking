@@ -6,3 +6,9 @@
     -ms-user-select: none;
     user-select: none;
 }
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
