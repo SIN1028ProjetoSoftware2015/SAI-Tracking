@@ -38,7 +38,7 @@
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="index.html">Início</a></li>
-            <li><a href="#informacoes">Informações</a></li>
+            <li><a href="http://site.ufsm.br/sai/">Informações</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cadastro<span class="caret"></span></a>
               <ul class="dropdown-menu">
@@ -142,21 +142,29 @@
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
           <div class="box-chart">
-            <h3>Universidades mais procuradas</h3>
-            <canvas id="GraficoBarra" height="250"></canvas>
+            <h3>Universidades conveniadas mais procuradas para intercâmbio</h3>
+            <canvas id="GraficoBarra" height="150"></canvas>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
           <div class="box-chart">
-            <h3>Países que mais recebem intercambistas/ou Intercambistas que vem à UFSM</h3>
-            <canvas id="GraficoBarra2" height="200"></canvas>
+            <h3>Países que mais recebem intercambistas brasileiros/ou Intercambistas que vem à UFSM</h3>
+            <canvas id="GraficoBarra2" height="150"></canvas>
+          </div>
+        </div>
+      </div>
+	  <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <div class="box-chart">
+            <h3>Linguas mais procuradas para realizar intercâmbio no exterior</h3>
+            <canvas id="GraficoBarra3" height="150"></canvas>
           </div>
         </div>
       </div>
     </div>
-
+    </div>
       <!-- FOOTER -->
       <div class="container">
         <footer>
@@ -198,10 +206,10 @@
         ],
         datasets: [{
           label: "Dados primários",
-          fillColor: "rgba(220,220,220,0.5)",
-          strokeColor: "rgba(220,220,220,0.8)",
-          highlightFill: "rgba(220,220,220,0.75)",
-          highlightStroke: "rgba(220,220,220,1)",
+          fillColor: "rgba(0,0,255,0.5)",
+          strokeColor: "rgba(0,0,255,0.8)",
+          highlightFill: "rgba(0,0,255,0.75)",
+          highlightStroke: "rgba(0,0,255,1)",
           data: [70, 65, 62, 60, 57, 53, 51, 49, 46, 42]
         },]
       };
@@ -220,10 +228,32 @@
         ],
         datasets: [{
           label: "Dados primários",
-          fillColor: "rgba(220,220,220,0.5)",
-          strokeColor: "rgba(220,220,220,0.8)",
-          highlightFill: "rgba(220,220,220,0.75)",
-          highlightStroke: "rgba(220,220,220,1)",
+          fillColor: "rgba(255,255,0,0.5)",
+          strokeColor: "rgba(255,255,0,0.8)",
+          highlightFill: "rgba(255,255,0,0.75)",
+          highlightStroke: "rgba(255,255,0,1)",
+          data: [70, 65, 62, 60, 57, 53, 51, 49, 46, 42]
+        },]
+      };
+	  var dataLanguages = {
+        labels: [
+          "Inglês",
+          "Espanhol",
+          "Português",
+          "Francês",
+          "Italiano",
+          "Alemão",
+          "",
+          "",
+          "",
+          ""
+        ],
+        datasets: [{
+          label: "Dados primários",
+          fillColor: "rgba(255,0,0,0.5)",
+          strokeColor: "rgba(255,0,0,0.8)",
+          highlightFill: "rgba(255,0,0,0.75)",
+          highlightStroke: "rgba(255,0,0,1)",
           data: [70, 65, 62, 60, 57, 53, 51, 49, 46, 42]
         },]
       };
@@ -231,8 +261,10 @@
       window.onload = function(){
         var ctx1 = document.getElementById("GraficoBarra").getContext("2d");
         var ctx2 = document.getElementById("GraficoBarra2").getContext("2d");
+		var ctx3 = document.getElementById("GraficoBarra3").getContext("2d");
         var BarChart1 = new Chart(ctx1).Bar(dataSchools, options);
         var BarChart2 = new Chart(ctx2).Bar(dataCountries, options);
+		var BarChart3 = new Chart(ctx3).Bar(dataLanguages, options);
       }
     </script>
   </body>
