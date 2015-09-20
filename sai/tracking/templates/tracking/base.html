@@ -1,0 +1,87 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>{% block title %}Projeto SAI Tracking para estutantes em intercâmbio{% endblock %}</title>
+
+    <!-- Bootstrap -->
+    <link href="{% static "tracking/css/bootstrap.min.css" %}" rel="stylesheet">
+    <link href="{% static "tracking/css/bootstrap-theme.min.css" %}" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link href="{% static "tracking/css/geral.css" %}" rel="stylesheet">
+    <link href="{% static "tracking/css/index.css" %}" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container-fluid">
+        <div class="container utility-bar">
+            <!-- barra com logotipo SAI e menu -->
+            <div class="row">
+                <div class="col-md-1">
+                    <img src="{% static "tracking/images/logo_sai.png" %}" class="img-responsive center-block logo-sai" alt="Marca da Secretaria de Apoio Internacional da UFSM">
+                </div>
+                <div class="col-md-11">
+                   <!-- Login link and language menu -->
+                   <div class="row">
+                        <div class="col-md-1 col-md-offset-9 text-right">
+                            <a href="#">Login</a>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="dropdown noselect" id="downdown-lang">
+                                <div class="dropdown-toggle" id="dropdown-lang-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
+                                    Internacional
+                                    <span class="caret"></span>
+                                </div>
+                                <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-lang-btn">
+                                    <li><a href="#"><img src="{% static "tracking/images/eua_flag.bmp" %}" alt="Translate to English"> English</a></li>
+                                    <li><a href="#"><img src="{% static "tracking/images/spain_flag.bmp" %}" alt="Tra"> Español</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                   </div>
+                   <!-- Project name and navbar -->
+                   <div class="row">
+                        <div class="col-md-3"><h1 class="titulo-site">Projeto SAI</h1></div>
+                        <div class="col-md-9">
+                            <nav class="navbar" id="menu-principal">
+                                <ul class="nav navbar-nav">
+                                    <li class="active"><a href="#">Início</a></li>
+                                    <li><a href="#">Informações</a></li>
+                                    <li><a href="#">Alunos estrangeiros</a></li>
+                                    <li><a href="#">Alunos brasileiros</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                   </div>
+                </div>
+            </div>
+            <!-- fim barra com logotipo SAI e menu -->
+        </div><!-- /.container -->
+    </div><!-- /.container-fluid -->
+    
+    {% block content %}{% endblock content %}
+    
+    <!-- New container for the footer to limit the with and center the content -->
+    <div class="container">
+        <!-- FOOTER -->
+        <footer>
+            <p class="pull-right"><a href="#">Back to top</a></p>
+            <p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        </footer>
+    </div>
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{% static "tracking/js/bootstrap.min.js" %}"></script>
+  </body>
+</html>
