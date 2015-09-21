@@ -1,6 +1,6 @@
 /* CUSTOMIZE CONTAINER FOR PAGE HEADER
 -------------------------------------------------- */
-.container-fluid {
+.dark-blue {
     background: #0C1E2E none repeat scroll 0% 0%;
     color: #C0C0C0;
 }
@@ -45,7 +45,7 @@
 }
 
 /* Remove underline when mouse leave the menu */
-#menu-principal > ul > li > a:hover, 
+#menu-principal > ul > li > a:hover,
 #menu-principal > ul > li > a:focus {
     background-color: #0C1E2E;
 }
