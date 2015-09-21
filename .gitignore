@@ -16,3 +16,7 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+#Django
+*.pyc
+*.pyo
