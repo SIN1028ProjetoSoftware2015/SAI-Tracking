@@ -1,0 +1,33 @@
+{% extends "tracking/base.html" %}
+{% load staticfiles %}
+
+{% block custom-css %}
+<style>
+    #map-in{
+        height: 500px;
+    }
+</style>
+{% endblock custom-css %}
+
+{% block content %}
+<div class="container">
+    <div class="col-md-12">
+        <div id="pagina-cabecalho" class="page-header">
+          <h1>Alunos da UFSM em intercâmbio</h1>
+      </div>
+  </div>
+  <div class="row">
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-10">
+            <!-- Container for map -->
+            <div id="map-in"></div>
+        </div>
+  </div>
+</div>
+{% endblock content %}
+{% block custom-js %}
+<script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+<script src={% static "tracking/js/googlemaps-out.js" %}></script>
+{% endblock custom-js %}

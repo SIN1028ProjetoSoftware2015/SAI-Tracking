@@ -6,3 +6,9 @@ from django.template import RequestContext, loader
 def index(request):
 	# template = loader.get_template('tracking/index.html')
 	return render(request, 'tracking/index.html')
+
+def map_in(request):
+    return render(request, 'tracking/map-in.html')
+
+def map_out(request):
+    return render(request, 'tracking/map-out.html')
