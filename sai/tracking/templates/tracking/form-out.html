@@ -5,7 +5,7 @@
   <div class="row">
     <div class="col-md-12">
       <div id="pagina-cabecalho" class="page-header">
-        <h1>Solicitação de Matrícula na Modalidade Intercâmbio</h1>
+        <h1>Alunos estrangeiros</h1>
       </div>
     </div>
   </div>
@@ -22,9 +22,6 @@
                   <li><a href="#tab2" data-toggle="tab">Passo 2</a></li>
                   <li><a href="#tab3" data-toggle="tab">Passo 3</a></li>
                   <li><a href="#tab4" data-toggle="tab">Passo 4</a></li>
-                  <li><a href="#tab5" data-toggle="tab">Passo 5</a></li>
-                  <li><a href="#tab6" data-toggle="tab">Passo 6</a></li>
-                  <li><a href="#tab7" data-toggle="tab">Passo 7</a></li>
                 </ul>
               </div>
             </div>
@@ -130,148 +127,322 @@
               </div>
             </div>
             <div class="tab-pane" id="tab2">
-              <h3>Dados do intercâmbio</h3>
+              <h3>Contato no país de origem</h3>
               <!-- Text input-->
               <div class="form-group">
-                <label class="col-md-4 control-label" for="Universidade de Destino">Universidade de Destino:</label>
+                <label class="col-md-4 control-label" for="nome_contato">Nome</label>
                 <div class="col-md-8">
-                  <input id="Universidade" name="Universidade" type="text" placeholder="" class="form-control input-md" required="">
-
+                  <input id="nome_contato" name="nome_contato" type="text" placeholder="" class="form-control input-md" required="">
                 </div>
               </div>
-
               <!-- Text input-->
               <div class="form-group">
-                <label class="col-md-4 control-label" for="Programa">Programa:</label>
+                <label class="col-md-4 control-label" for="contato_parentesco">Parentesco</label>
                 <div class="col-md-8">
-                  <input id="Programa" name="Programa" type="text" placeholder="" class="form-control input-md" required="">
-
+                  <input id="contato_parentesco" name="contato_parentesco" type="text" placeholder="" class="form-control input-md" required="">
                 </div>
               </div>
-
               <!-- Text input-->
               <div class="form-group">
-                <label class="col-md-4 control-label" for="Cidade">Cidade:</label>
+                <label class="col-md-4 control-label" for="contato_endereco">Endereço</label>
                 <div class="col-md-8">
-                  <input id="Cidade" name="Cidade" type="text" placeholder="" class="form-control input-md">
-
+                  <input id="contato_endereco" name="contato_endereco" type="text" placeholder="" class="form-control input-md" required="">
                 </div>
               </div>
-
               <!-- Text input-->
               <div class="form-group">
-                <label class="col-md-4 control-label" for="periodo">Período</label>
+                <label class="col-md-4 control-label" for="contato_telefone">Telefone</label>
                 <div class="col-md-8">
-                  <input id="periodo" name="periodo" type="text" placeholder="" class="form-control input-md" required="">
-
+                  <input id="contato_telefone" name="contato_telefone" type="text" placeholder="" class="form-control input-md" required="">
                 </div>
               </div>
-
               <!-- Text input-->
               <div class="form-group">
-                <label class="col-md-4 control-label" for="radios">Modalidade</label>
-                <div class="col-md-6">
-                  <label class="radio-inline" for="radios-0">
-                    <input type="radio" name="radios" id="radios-0" value="1" checked="checked">
-                    Graduação
-                  </label>
-                  <label class="radio-inline" for="radios-1">
-                    <input type="radio" name="radios" id="radios-1" value="2">
-                    Especialização
-                  </label>
-                  <label class="radio-inline" for="radios-2">
-                    <input type="radio" name="radios" id="radios-2" value="3">
-                    Mestrado
-                  </label>
-                  <label class="radio-inline" for="radios-3">
-                    <input type="radio" name="radios" id="radios-3" value="4">
-                    Doutorado
-                  </label>
-                  <label class="radio-inline" for="radios-4">
-                    <input type="radio" name="radios" id="radios-4" value="5">
-                    Pós-Doutorado
-                  </label>
-                  <label class="radio-inline" for="radios-5">
-                    <input type="radio" name="radios" id="radios-5" value="6">
-                    Estágio
-                  </label>
+                <label class="col-md-4 control-label" for="contato_email">E-mail</label>
+                <div class="col-md-8">
+                  <input id="contato_email" name="contato_email" type="text" placeholder="" class="form-control input-md" required="">
                 </div>
               </div>
             </div>
-
             <div class="tab-pane" id="tab3">
-              <h2>Plano de Atividades no exterior</h2>
-              <hr />
-              <br /><br />
-              <div class="table-responsive">
-                <table id="products-table" class="table table-hover table-bordered">
-                  <tbody>
-                    <tr>
-                      <th>Sem./ano</th>
-                      <th>Codigo/Disciplina</th>
-                      <th>Creditos/Carga Horaria</th>
-                      <th>Codigo/Disciplina</th>
-                      <th>Creditos/Carga Horaria</th>
-                      <th class="actions">Ações</th>
-                    </tr>
-                    <tr>
-                      <td><input type="text" name="Sem_ano"></td>
-                      <td><input type="text" name="cod_disc"></td>
-                      <td><input type="text" name="Cred_carg"></td>
-                      <td><input type="text" name="Cod_disc_2"></td>
-                      <td><input type="text" name="Cred_carg_2"></td>
-                      <td class="actions">
-                        <button class="btn btn-large btn-danger" onclick="RemoveTableRow(this)" type="button">Remover</button>
-                      </td>
-                    </tr>
-                  </tbody>
-                  <tfoot>
-                    <tr>
-                      <td colspan="6" style="text-align: left;">
-                        <button class="btn btn-large btn-success" onclick="AddTableRow(this)" type="button">Adicionar linha</button>
-                      </td>
-                    </tr>
-                  </tfoot>
-                </table>
+              <h3>Dados da instituição de vínculo</h3>
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="instituicao_nome">Nome</label>
+                <div class="col-md-8">
+                  <input id="instituicao_nome" name="instituicao_nome" type="text" placeholder="" class="form-control input-md" required="">
+                </div>
               </div>
-              <hr />
-              <br /><br />
-              <p>Caso o semestre letivo <strong> não estiver concluído</strong> no início da viagem preencha o quadro abaixo informando se será possível realizar provas antecipadas.</p>
-              <p><strong>Lembre-se: a decisão sobre a antecipação de avaliação é competência exclusiva do professor, desde que atendido o mínimo de 75% das aulas lecionadas.</strong></p>
-              <p>Caso pertinente, relacione as disciplinas no quadro a seguir e colha a assinatura do professor responsável.</p>
 
-              <div class="table-responsive">
-                <table id="produto-tabela" class="table table-hover table-bordered">
-                  <tbody>
-                    <tr>
-                      <th>Código da disciplina</th>
-                      <th>Nome da disciplina</th>
-                      <th>Antecipação de avaliação (sim*/não)</th>
-                      <th>De acordo do professor*</th>
-                      <th class="actions">Ações</th>
-                    </tr>
-                    <tr>
-                      <td><input type="text" name="cod"></td>
-                      <td><input type="text" name="nome"></td>
-                      <td><input type="text" name="ant"></td>
-                      <td><input type="text" name="prof"></td>
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="instituicao_cidade">Cidade</label>
+                <div class="col-md-8">
+                  <input id="instituicao_cidade" name="instituicao_cidade" type="text" placeholder="" class="form-control input-md" required="">
+                </div>
+              </div>
 
-                      <td class="actions">
-                        <button class="btn btn-large btn-danger" onclick="RemoveTableRow(this)" type="button">Remover</button>
-                      </td>
-                    </tr>
-                  </tbody>
-                  <tfoot>
-                    <tr>
-                      <td colspan="6" style="text-align: left;">
-                        <button class="btn btn-large btn-success" onclick="AddRow(this)" type="button">Adicionar linha</button>
-                      </td>
-                    </tr>
-                  </tfoot>
-                </table>
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="instituicao_pais">País</label>
+                <div class="col-md-8">
+                  <input id="instituicao_pais" name="instituicao_pais" type="text" placeholder="" class="form-control input-md" required="">
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="instituicao_endereco">Endereço</label>
+                <div class="col-md-8">
+                  <input id="instituicao_endereco" name="instituicao_endereco" type="text" placeholder="" class="form-control input-md" required="">
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="instituicao_telefone">Telefone</label>
+                <div class="col-md-8">
+                  <input id="instituicao_telefone" name="instituicao_telefone" type="text" placeholder="" class="form-control input-md" required="">
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="instituicao_contato">Pessoa de contato - cargo</label>
+                <div class="col-md-8">
+                  <input id="instituicao_contato" name="instituicao_contato" type="text" placeholder="" class="form-control input-md" required="">
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="instituicao_email">E-mail</label>
+                <div class="col-md-8">
+                  <input id="instituicao_email" name="instituicao_email" type="text" placeholder="" class="form-control input-md" required="">
+                </div>
               </div>
             </div>
+            <div class="tab-pane" id="tab4">
+              <h3>Atividades na UFSM</h3>
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="atividade_curso">Curso/Departamento</label>
+                <div class="col-md-8">
+                  <input id="atividade_curso" name="atividade_curso" type="text" placeholder="" class="form-control input-md" required="">
+                </div>
+              </div>
 
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="atividade_ramal">Ramal</label>
+                <div class="col-md-8">
+                  <input id="atividade_ramal" name="atividade_ramal" type="text" placeholder="" class="form-control input-md" required="">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="atividade_ramal">Nível de estudo</label>
+                <div class="col-md-8">
+                  <select name="nivel_estudo" id="nivel_estudo" class="form-control select-md">
+                    <option value="graduacao">Graduação</option>
+                    <option value="especializacao">Especialização</option>
+                    <option value="mestrado">Mestrado</option>
+                    <option value="doutorado">Doutorado</option>
+                    <option value="posdoc">Pós-Doutorado</option>
+                    <option value="estagio">Estágio</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="periodo_ini">Data inicial</label>
+                <div class="col-md-8">
+                  <input id="periodo_ini" name="periodo_ini" type="date" class="form-control input-md">
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="periodo_fim">Data final</label>
+                <div class="col-md-8">
+                  <input id="periodo_fim" name="periodo_fim" type="date" class="form-control input-md">
+                </div>
+              </div>
+
+            </div>
+            <div class="tab-pane" id="tab5">
+              <h3>Dados após chegada ao Brasil</h3>
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="end_santa_maria">Endereço no Brasil</label>
+                <div class="col-md-8">
+                  <input id="end_santa_maria" name="end_santa_maria" type="text" placeholder="" class="form-control input-md" required="">
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="matricula">Matrícula</label>
+                <div class="col-md-8">
+                  <input id="matricula" name="matricula" type="text" placeholder="" class="form-control input-md" required="">
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="forma_ingresso">Forma de ingresso</label>
+                <div class="col-md-8">
+                  <input id="forma_ingresso" name="forma_ingresso" type="text" placeholder="" class="form-control input-md" required="">
+                </div>
+              </div>
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="rne">RNE</label>
+                <div class="col-md-8">
+                  <input id="rne" name="rne" type="text" placeholder="" class="form-control input-md" required="">
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane" id="tab6">
+              6
+            </div>
+            <div class="tab-pane" id="tab7">
+              <h3>Anexar documentos</h3>
+
+              <!-- File Button -->
+              <div class="form-group">
+                <label class="col-md-6 control-label" for="carta_aceite/convite">1. Carta de Aceite/Convite</label>
+                <div class="col-md-6">
+                  <input id="carta_aceite/convite" name="carta_aceite/convite" class="input-file" type="file">
+                </div>
+              </div>
+
+              <!-- File Button -->
+              <div class="form-group">
+                <label class="col-md-6 control-label" for="copias_passaporte">2. Cópias do passaporte (COMPLETO)</label>
+                <div class="col-md-6">
+                  <input id="copias_passaporte" name="copias_passaporte" class="input-file" type="file">
+                </div>
+              </div>
+
+              <!-- Text Button-->
+              <div class="form-group">
+                <label class="col-md-6 control-label" for="copias_historico_academico">3. Cópia do Histórico Acadêmico</label>
+                <div class="col-md-6">
+                  <input id="copias_historico_academico" name="copias_historico_academico" class="input-file" type="file">
+                </div>
+              </div>
+
+              <!-- Text Button-->
+              <div class="form-group">
+                <label class="col-md-6 control-label" for="carta_motivacao">4. Carta de Motivação</label>
+                <div class="col-md-6">
+                  <input id="carta_motivacao" name="carta_motivacao" class="input-file" type="file">
+                </div>
+              </div>
+
+              <!-- Text Button-->
+              <div class="form-group">
+                <label class="col-md-6 control-label" for="plano_estudo">5. Plano de Estudo a ser realizado na UFSM assinado pelo coordenador</label>
+                <div class="col-md-6">
+                  <input id="plano_estudo" name="plano_estudo" class="input-file" type="file">
+                </div>
+              </div>
+
+              <!-- Text Button-->
+              <div class="form-group">
+                <label class="col-md-6 control-label" for="copia_seguro">6. Cópia do seguro internacional de saúde e acidentes</label>
+                <div class="col-md-6">
+                  <input id="copia_seguro" name="copia_seguro" class="input-file" type="file">
+                </div>
+              </div>
+
+              <!-- Text Button-->
+              <div class="form-group">
+                <label class="col-md-6 control-label" for="carta_recomendacao">7. Carta de Recomendação do Professor Orientador ou da Instituição de origem</label>
+                <div class="col-md-6">
+                  <input id="carta_recomendacao" name="carta_recomendacao" class="input-file" type="file">
+                </div>
+              </div>
+
+              <!-- Text Button-->
+              <div class="form-group">
+                <label class="col-md-6 control-label" for="visto_estudante">8. Visto de estudante</label>
+                <div class="col-md-6">
+                  <input id="visto_estudante" name="visto_estudante" class="input-file" type="file">
+                </div>
+              </div>
+
+              <!-- Text Button-->
+              <div class="form-group">
+                <label class="col-md-6 control-label" for="carta_apresentacao">9. Carta de Apresentação</label>
+                <div class="col-md-6">
+                  <input id="carta_apresentacao" name="carta_apresentacao" class="input-file" type="file">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-md-6 col-md-offset-6">
+                    <input class="btn btn-success" type="submit" value="Enviar respostas">
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab4">
+                <div class="table-responsive">
+
+                  <table id="produto-tabela" class="table table-hover table-bordered">
+                    <tbody>
+                      <p>*<strong>LEMBRE-SE:</strong>a matricula e de responsabilidade do aluno e necessita ser a cada semestre. Observe o calendario!</p>
+                      <tr>
+                        <th>Assinatura do aluno:</th>
+                        <th>data___/___/___</th>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="table-responsive">
+                  <table id="produto-tabela" class="table table-hover table-bordered">
+                    <tbody>
+                      <tr>
+                        <th>Coordenador do curso na UFSM:</th>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="table-responsive">
+                  <table id="produto-tabela" class="table table-hover table-bordered">
+                    <tbody>
+                      <tr>
+                        <th><strong>SAI &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp </strong></th>
+                        <th><strong>PROGRAD</strong></th>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <br /></br />
+                <div class="table-responsive">
+                  <table id="produto-tabela" class="table table-hover table-bordered">
+                    <tbody>
+                      <tr>
+                        <th>assinatura &nbsp &nbsp   &nbsp &nbsp &nbsp &nbsp data  &nbsp &nbsp   &nbsp &nbsp  &nbsp &nbsp  carimbo</th>
+                        <th>assinatura &nbsp &nbsp   &nbsp &nbsp &nbsp &nbsp data  &nbsp &nbsp   &nbsp &nbsp &nbsp &nbsp   carimbo</th>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p>*Deverão ser feitas duas vias deste documento (01 para PROGRAD; 01 para SAI)</p>
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-md-6 col-md-offset-6">
+                      <input class="btn btn-success" type="submit" value="Enviar respostas">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <ul class="pager wizard">
               <li class="previous"><a href="#">Anterior</a></li>
               <li class="next"><a href="#">Próxima</a></li>
