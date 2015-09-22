@@ -82,8 +82,8 @@
           <img class="img-circle" src="{% static "tracking/images/ex_formulario.jpg" %}" alt="Generic placeholder image" width="140" height="140">
           <h2>Documentação</h2>
           <p>Preencha formulários e inclua os documentos solicitados pela SAI utilizando os links abaixo.</p>
-          <p><a href="#" role="button">Aluno estrangeiro na UFSM &raquo;</a></p>
-          <p><a href="#" role="button">Aluno da UFSM em intercâmbio &raquo;</a></p>
+          <p><a href="{% url 'form_in' %}" role="button">Aluno estrangeiro na UFSM &raquo;</a></p>
+          <p><a href="{% url 'form_out' %}" role="button">Aluno da UFSM em intercâmbio &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
     </div><!-- /.container -->

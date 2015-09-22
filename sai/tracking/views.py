@@ -12,3 +12,9 @@ def map_in(request):
 
 def map_out(request):
     return render(request, 'tracking/map-out.html')
+
+def form_in(request):
+    return render(request, 'tracking/form-in.html')
+
+def form_out(request):
+    return render(request, 'tracking/form-out.html')

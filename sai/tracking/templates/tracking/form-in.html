@@ -1,0 +1,462 @@
+{% extends "tracking/base.html" %}
+{% load staticfiles %}
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div id="pagina-cabecalho" class="page-header">
+        <h1>Alunos estrangeiros</h1>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <form action="" class="form-horizontal">
+        <!-- teste wizard -->
+        <div id="rootwizard">
+          <div class="row">
+            <div class="navbar">
+              <div class="navbar-inner">
+                <ul>
+                  <li><a href="#tab1" data-toggle="tab">Passo 1</a></li>
+                  <li><a href="#tab2" data-toggle="tab">Passo 2</a></li>
+                  <li><a href="#tab3" data-toggle="tab">Passo 3</a></li>
+                  <li><a href="#tab4" data-toggle="tab">Passo 4</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div id="bar" class="progress progress-striped active">
+            <div class="bar progress-bar"></div>
+          </div>
+          <div class="tab-content">
+            <div class="tab-pane" id="tab1">
+              <h3>Dados pessoais</h3>
+              <!-- Nome completo-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="nome">Nome completo:</label>
+                <div class="col-md-8">
+                  <input id="nome" name="nome" type="text" placeholder="" class="form-control input-md" required="">
+                </div>
+              </div>
+
+              <!-- File Button -->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="foto">Foto</label>
+                <div class="col-md-4">
+                  <input id="foto" name="foto" class="input-file" type="file">
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="data_nascimento">Data de nascimento</label>
+                <div class="col-md-8">
+                  <input id="data_nascimento" name="data_nascimento" type="text" placeholder="" class="form-control input-md" required="">
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="filiacao">Filiação</label>
+                <div class="col-md-8">
+                  <input id="filiacao" name="filiacao" type="text" placeholder="Nome do pai" class="form-control input-md">
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for=""></label>
+                <div class="col-md-8">
+                  <input id="" name="" type="text" placeholder="Nome da mãe" class="form-control input-md" required="">
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="local_nascimento">Local de nascimento</label>
+                <div class="col-md-8">
+                  <input id="local_nascimento" name="local_nascimento" type="text" placeholder="" class="form-control input-md" required="">
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="país">País</label>
+                <div class="col-md-8">
+                  <select id="país" name="pais" placeholder="" class="form-control input-md" required="">
+                    <option value="brasil">Brasil</option>
+                    <option value="eua">EUA</option>
+                    <option value="argentina">Argentina</option>
+                    <option value="mexico">México</option>
+                    <option value="uruguai">Uruguai</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="num_passaporte">Número do passaporte</label>
+                <div class="col-md-8">
+                  <input id="num_passaporte" name="num_passaporte" type="text" placeholder="" class="form-control input-md" required="">
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="endereco">Endereço permanente</label>
+                <div class="col-md-8">
+                  <input id="endereco" name="endereco" type="text" placeholder="" class="form-control input-md" required="">
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="email">E-mail</label>
+                <div class="col-md-8">
+                  <input id="email" name="email" type="text" placeholder="" class="form-control input-md">
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="telefone">Telefone</label>
+                <div class="col-md-8">
+                  <input id="telefone" name="telefone" type="text" placeholder="" class="form-control input-md" required="">
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane" id="tab2">
+              <h3>Contato no país de origem</h3>
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="nome_contato">Nome</label>
+                <div class="col-md-8">
+                  <input id="nome_contato" name="nome_contato" type="text" placeholder="" class="form-control input-md" required="">
+                </div>
+              </div>
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="contato_parentesco">Parentesco</label>
+                <div class="col-md-8">
+                  <input id="contato_parentesco" name="contato_parentesco" type="text" placeholder="" class="form-control input-md" required="">
+                </div>
+              </div>
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="contato_endereco">Endereço</label>
+                <div class="col-md-8">
+                  <input id="contato_endereco" name="contato_endereco" type="text" placeholder="" class="form-control input-md" required="">
+                </div>
+              </div>
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="contato_telefone">Telefone</label>
+                <div class="col-md-8">
+                  <input id="contato_telefone" name="contato_telefone" type="text" placeholder="" class="form-control input-md" required="">
+                </div>
+              </div>
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="contato_email">E-mail</label>
+                <div class="col-md-8">
+                  <input id="contato_email" name="contato_email" type="text" placeholder="" class="form-control input-md" required="">
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane" id="tab3">
+              <h3>Dados da instituição de vínculo</h3>
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="instituicao_nome">Nome</label>
+                <div class="col-md-8">
+                  <input id="instituicao_nome" name="instituicao_nome" type="text" placeholder="" class="form-control input-md" required="">
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="instituicao_cidade">Cidade</label>
+                <div class="col-md-8">
+                  <input id="instituicao_cidade" name="instituicao_cidade" type="text" placeholder="" class="form-control input-md" required="">
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="instituicao_pais">País</label>
+                <div class="col-md-8">
+                  <input id="instituicao_pais" name="instituicao_pais" type="text" placeholder="" class="form-control input-md" required="">
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="instituicao_endereco">Endereço</label>
+                <div class="col-md-8">
+                  <input id="instituicao_endereco" name="instituicao_endereco" type="text" placeholder="" class="form-control input-md" required="">
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="instituicao_telefone">Telefone</label>
+                <div class="col-md-8">
+                  <input id="instituicao_telefone" name="instituicao_telefone" type="text" placeholder="" class="form-control input-md" required="">
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="instituicao_contato">Pessoa de contato - cargo</label>
+                <div class="col-md-8">
+                  <input id="instituicao_contato" name="instituicao_contato" type="text" placeholder="" class="form-control input-md" required="">
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="instituicao_email">E-mail</label>
+                <div class="col-md-8">
+                  <input id="instituicao_email" name="instituicao_email" type="text" placeholder="" class="form-control input-md" required="">
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane" id="tab4">
+              <h3>Atividades na UFSM</h3>
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="atividade_curso">Curso/Departamento</label>
+                <div class="col-md-8">
+                  <input id="atividade_curso" name="atividade_curso" type="text" placeholder="" class="form-control input-md" required="">
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="atividade_ramal">Ramal</label>
+                <div class="col-md-8">
+                  <input id="atividade_ramal" name="atividade_ramal" type="text" placeholder="" class="form-control input-md" required="">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="atividade_ramal">Nível de estudo</label>
+                <div class="col-md-8">
+                  <select name="nivel_estudo" id="nivel_estudo" class="form-control select-md">
+                    <option value="graduacao">Graduação</option>
+                    <option value="especializacao">Especialização</option>
+                    <option value="mestrado">Mestrado</option>
+                    <option value="doutorado">Doutorado</option>
+                    <option value="posdoc">Pós-Doutorado</option>
+                    <option value="estagio">Estágio</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="periodo_ini">Data inicial</label>
+                <div class="col-md-8">
+                  <input id="periodo_ini" name="periodo_ini" type="date" class="form-control input-md">
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="periodo_fim">Data final</label>
+                <div class="col-md-8">
+                  <input id="periodo_fim" name="periodo_fim" type="date" class="form-control input-md">
+                </div>
+              </div>
+
+            </div>
+            <div class="tab-pane" id="tab5">
+              <h3>Dados após chegada ao Brasil</h3>
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="end_santa_maria">Endereço no Brasil</label>
+                <div class="col-md-8">
+                  <input id="end_santa_maria" name="end_santa_maria" type="text" placeholder="" class="form-control input-md" required="">
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="matricula">Matrícula</label>
+                <div class="col-md-8">
+                  <input id="matricula" name="matricula" type="text" placeholder="" class="form-control input-md" required="">
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="forma_ingresso">Forma de ingresso</label>
+                <div class="col-md-8">
+                  <input id="forma_ingresso" name="forma_ingresso" type="text" placeholder="" class="form-control input-md" required="">
+                </div>
+              </div>
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="rne">RNE</label>
+                <div class="col-md-8">
+                  <input id="rne" name="rne" type="text" placeholder="" class="form-control input-md" required="">
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane" id="tab6">
+              6
+            </div>
+            <div class="tab-pane" id="tab7">
+              <h3>Anexar documentos</h3>
+
+              <!-- File Button -->
+              <div class="form-group">
+                <label class="col-md-6 control-label" for="carta_aceite/convite">1. Carta de Aceite/Convite</label>
+                <div class="col-md-6">
+                  <input id="carta_aceite/convite" name="carta_aceite/convite" class="input-file" type="file">
+                </div>
+              </div>
+
+              <!-- File Button -->
+              <div class="form-group">
+                <label class="col-md-6 control-label" for="copias_passaporte">2. Cópias do passaporte (COMPLETO)</label>
+                <div class="col-md-6">
+                  <input id="copias_passaporte" name="copias_passaporte" class="input-file" type="file">
+                </div>
+              </div>
+
+              <!-- Text Button-->
+              <div class="form-group">
+                <label class="col-md-6 control-label" for="copias_historico_academico">3. Cópia do Histórico Acadêmico</label>
+                <div class="col-md-6">
+                  <input id="copias_historico_academico" name="copias_historico_academico" class="input-file" type="file">
+                </div>
+              </div>
+
+              <!-- Text Button-->
+              <div class="form-group">
+                <label class="col-md-6 control-label" for="carta_motivacao">4. Carta de Motivação</label>
+                <div class="col-md-6">
+                  <input id="carta_motivacao" name="carta_motivacao" class="input-file" type="file">
+                </div>
+              </div>
+
+              <!-- Text Button-->
+              <div class="form-group">
+                <label class="col-md-6 control-label" for="plano_estudo">5. Plano de Estudo a ser realizado na UFSM assinado pelo coordenador</label>
+                <div class="col-md-6">
+                  <input id="plano_estudo" name="plano_estudo" class="input-file" type="file">
+                </div>
+              </div>
+
+              <!-- Text Button-->
+              <div class="form-group">
+                <label class="col-md-6 control-label" for="copia_seguro">6. Cópia do seguro internacional de saúde e acidentes</label>
+                <div class="col-md-6">
+                  <input id="copia_seguro" name="copia_seguro" class="input-file" type="file">
+                </div>
+              </div>
+
+              <!-- Text Button-->
+              <div class="form-group">
+                <label class="col-md-6 control-label" for="carta_recomendacao">7. Carta de Recomendação do Professor Orientador ou da Instituição de origem</label>
+                <div class="col-md-6">
+                  <input id="carta_recomendacao" name="carta_recomendacao" class="input-file" type="file">
+                </div>
+              </div>
+
+              <!-- Text Button-->
+              <div class="form-group">
+                <label class="col-md-6 control-label" for="visto_estudante">8. Visto de estudante</label>
+                <div class="col-md-6">
+                  <input id="visto_estudante" name="visto_estudante" class="input-file" type="file">
+                </div>
+              </div>
+
+              <!-- Text Button-->
+              <div class="form-group">
+                <label class="col-md-6 control-label" for="carta_apresentacao">9. Carta de Apresentação</label>
+                <div class="col-md-6">
+                  <input id="carta_apresentacao" name="carta_apresentacao" class="input-file" type="file">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-md-6 col-md-offset-6">
+                    <input class="btn btn-success" type="submit" value="Enviar respostas">
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab4">
+                <div class="table-responsive">
+
+                  <table id="produto-tabela" class="table table-hover table-bordered">
+                    <tbody>
+                      <p>*<strong>LEMBRE-SE:</strong>a matricula e de responsabilidade do aluno e necessita ser a cada semestre. Observe o calendario!</p>
+                      <tr>
+                        <th>Assinatura do aluno:</th>
+                        <th>data___/___/___</th>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="table-responsive">
+                  <table id="produto-tabela" class="table table-hover table-bordered">
+                    <tbody>
+                      <tr>
+                        <th>Coordenador do curso na UFSM:</th>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="table-responsive">
+                  <table id="produto-tabela" class="table table-hover table-bordered">
+                    <tbody>
+                      <tr>
+                        <th><strong>SAI &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp </strong></th>
+                        <th><strong>PROGRAD</strong></th>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <br /></br />
+                <div class="table-responsive">
+                  <table id="produto-tabela" class="table table-hover table-bordered">
+                    <tbody>
+                      <tr>
+                        <th>assinatura &nbsp &nbsp   &nbsp &nbsp &nbsp &nbsp data  &nbsp &nbsp   &nbsp &nbsp  &nbsp &nbsp  carimbo</th>
+                        <th>assinatura &nbsp &nbsp   &nbsp &nbsp &nbsp &nbsp data  &nbsp &nbsp   &nbsp &nbsp &nbsp &nbsp   carimbo</th>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p>*Deverão ser feitas duas vias deste documento (01 para PROGRAD; 01 para SAI)</p>
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-md-6 col-md-offset-6">
+                      <input class="btn btn-success" type="submit" value="Enviar respostas">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <ul class="pager wizard">
+              <li class="previous"><a href="#">Anterior</a></li>
+              <li class="next"><a href="#">Próxima</a></li>
+            </ul>
+          </div>
+        </div><!-- /.rootwizard -->
+        <!-- fim teste wizard -->
+      </form>
+    </div>
+  </div>
+</div><!-- /.container-->
+{% endblock content %}
+
+{% block custom-js %}
+<script src="{% static "tracking/js/jquery.bootstrap.wizard.min.js" %}"></script>
+<script src="{% static "tracking/js/wizard-custom.js" %}"></script>
+{% endblock custom-js %}
