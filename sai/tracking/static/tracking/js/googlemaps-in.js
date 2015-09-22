@@ -38,8 +38,9 @@ function geocodeAddress(geocoder, resultsMap, pais) {
                 }],
                 strokeColor: '#356AA0',
                 strokeOpacity: 0.95,
-                strokeWeight: 1,
-                map: resultsMap
+                strokeWeight: 2,
+                map: resultsMap,
+                geodesic: true,
             });
             var markerClient = new google.maps.Marker({
                 position: results[0].geometry.location,

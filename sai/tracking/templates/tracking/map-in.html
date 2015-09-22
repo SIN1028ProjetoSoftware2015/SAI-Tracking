@@ -2,7 +2,6 @@
 {% load staticfiles %}
 
 {% block custom-css %}
-<link href="{% static "tracking/css/simple-sidebar.css" %}" rel="stylesheet">
 <style>
     #map-in{
         height: 500px;
@@ -11,69 +10,64 @@
 {% endblock custom-css %}
 
 {% block content %}
-
-<div id="wrapper">
-    <!-- Sidebar -->
-    <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-            <li class="sidebar-brand">
-                <a href="#">
-                    Start Bootstrap
-                </a>
-            </li>
-            <li>
-                <a href="#">Dashboard</a>
-            </li>
-            <li>
-                <a href="#">Shortcuts</a>
-            </li>
-            <li>
-                <a href="#">Overview</a>
-            </li>
-            <li>
-                <a href="#">Events</a>
-            </li>
-            <li>
-                <a href="#">About</a>
-            </li>
-            <li>
-                <a href="#">Services</a>
-            </li>
-            <li>
-                <a href="#">Contact</a>
-            </li>
-        </ul>
-    </div>
-    <!-- /#sidebar-wrapper -->
-    <div id="page-content-wrapper">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <div id="pagina-cabecalho" class="page-header">
-                      <h1>Alunos do exterior em intercâmbio na UFSM</h1>
-                  </div>
-              </div>
+<div class="container">
+    <div class="col-md-12">
+        <div id="pagina-cabecalho" class="page-header">
+          <h1>Alunos de outros países na UFSM</h1>
+      </div>
+  </div>
+  <div class="row">
+        <!-- Filters side bar -->
+        <div class="col-md-2">
+          <h4>Filtros os dados</h4>
+          <form action="#">
+            <div><strong>Modalidade:</strong></div>
+            <div class="checkbox">
+              <label><input type="checkbox"> Graduação</label>
+              <label><input type="checkbox"> Especialização</label>
+              <label><input type="checkbox"> Mestrado</label>
+              <label><input type="checkbox"> Doutorado</label>
+              <label><input type="checkbox"> Pós Doutorado</label>
+              <label><input type="checkbox"> Estágio</label>
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <!-- Container for map -->
-                    <div id="map-in"></div>
-                </div>
+            <div><strong>Situação:</strong></div>
+            <div class="checkbox">
+              <label><input type="checkbox"> Alunos em intercâmbio atualmente</label>
             </div>
-        </div><!-- /.container -->
-    </div>
+            <div class="form-group">
+              <label for="ano_ini">Ano inicial</label>
+              <select class="form-control" id="ano_ini" name="ano_ini">
+                <option value="2015">2015</option>
+                <option value="2014">2014</option>
+                <option value="2013">2013</option>
+                <option value="2012">2012</option>
+                <option value="2011">2011</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="ano_ini">Ano final</label>
+              <select class="form-control" id="ano_fim" name="ano_fim">
+                <option value="2015">2015</option>
+                <option value="2014">2014</option>
+                <option value="2013">2013</option>
+                <option value="2012">2012</option>
+                <option value="2011">2011</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <button class="btn btn-default" type="submit">Filtrar</button>
+            </div>
+          </form>
+        </div>
+        <!-- End:Filters side bar -->
+        <div class="col-md-10">
+            <!-- Container for map -->
+            <div id="map-in"></div>
+        </div>
+  </div>
 </div>
-
 {% endblock content %}
 {% block custom-js %}
 <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
 <script src={% static "tracking/js/googlemaps-in.js" %}></script>
-<script src={% static "tracking/js/jasny-bootstrap.min.js" %}></script>
-<!-- Menu Toggle Script -->
-<script>
-$("#menu-toggle").click(function(e) {
-    e.preventDefault();
-    $("#wrapper").toggleClass("toggled");
-});
-</script>
 {% endblock custom-js %}

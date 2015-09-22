@@ -13,7 +13,7 @@ var jsonPaises = [
 
 function initMap(){
 	var geocoder = new google.maps.Geocoder();
-	var map = new google.maps.Map(document.getElementById('map-in'), {
+	var map = new google.maps.Map(document.getElementById('map-out'), {
 		center: {lat: 20.565129, lng: 14.191874},
 		zoom: 2
 	});
@@ -38,8 +38,9 @@ function geocodeAddress(geocoder, resultsMap, pais) {
                 }],
                 strokeColor: '#356AA0',
                 strokeOpacity: 0.95,
-                strokeWeight: 1,
-                map: resultsMap
+                strokeWeight: 2,
+                map: resultsMap,
+                geodesic: true,
             });
             var markerClient = new google.maps.Marker({
                 position: results[0].geometry.location,
