@@ -29,11 +29,13 @@
         <div class="col-md-1">
           <img src="{% static "tracking/images/logo_sai.png" %}" class="img-responsive center-block logo-sai" alt="Marca da Secretaria de Apoio Internacional da UFSM">
         </div>
-        <div class="col-md-11">
+        <div class="col-md-11 loginbar">
           <!-- Login link and language menu -->
           <div class="row">
             <div class="col-md-1 col-md-offset-9 text-right">
-              <a href="#">Login</a>
+              <a href="#" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus
+sagittis lacus vel augue laoreet rutrum faucibus.">Login</a>
+              
             </div>
             <div class="col-md-2">
               <div class="dropdown noselect" id="downdown-lang">
@@ -82,6 +84,14 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="{% static "tracking/js/bootstrap.min.js" %}"></script>
+  <script>
+    $('[data-toggle="popover"]').popover({
+      html: true,
+        content: function () {
+          return $(this).prev().html();
+        }
+    });
+  </script>
   {% block custom-js %}{% endblock custom-js %}
 </body>
 </html>
