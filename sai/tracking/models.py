@@ -6,6 +6,9 @@ class Country(models.Model):
     """This model represent all countries registered in APP"""
     name = models.CharField(max_length=128, unique=True)
 
+    def __unicode__(self):
+        return self.name
+
     class Meta:
         verbose_name='País'
         verbose_name_plural='Países'
