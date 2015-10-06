@@ -32,7 +32,10 @@
         <div class="col-md-11 loginbar">
           <!-- Login link and language menu -->
           <div class="row">            
-            <div class="col-md-1 col-md-offset-9 text-right">
+            <div class="col-md-2 col-md-offset-8 text-right">
+              {% if user.is_authenticated %}
+              <span>Bem vindo {{ user.username }}</span>
+              {% else %}
               <!-- Formulário de Login oculto por padrão. Visivel via popover -->
               <div class="hidden">
                 <form id="login_form" method="post" action="/tracking/login">
@@ -51,6 +54,7 @@
                 </form>
               </div>
               <a href="#" data-container="body" data-toggle="popover" data-placement="bottom">Login</a>
+              {% endif %}
             </div>
             <div class="col-xs-6 col-md-2">
               <div class="dropdown noselect" id="downdown-lang">
