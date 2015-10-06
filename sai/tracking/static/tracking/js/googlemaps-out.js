@@ -15,7 +15,8 @@ function initMap(){
 	var geocoder = new google.maps.Geocoder();
 	var map = new google.maps.Map(document.getElementById('map-out'), {
 		center: {lat: 20.565129, lng: 14.191874},
-		zoom: 2
+		zoom: 2,
+        minZoom: 2,
 	});
     for (var i = jsonPaises.length - 1; i >= 0; i--) {
         var arrPais = jsonPaises[i];
@@ -61,7 +62,6 @@ function geocodeAddress(geocoder, resultsMap, pais) {
                     infowindow.open(resultsMap, markerClient);
                 }
             })(markerClient, pais));
-
         } else {
             alert('Geocode was not successful for the following reason: ' + status);
         }
