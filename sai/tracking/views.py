@@ -1,6 +1,9 @@
+# -*- coding: utf-8 -*-
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import RequestContext, loader
+from django.contrib.auth import authenticate, login
+from django.http import HttpResponseRedirect, HttpResponse
 
 # Create your views here.
 def index(request):
@@ -18,3 +21,25 @@ def form_in(request):
 
 def form_out(request):
     return render(request, 'tracking/form-out.html')
+
+# User login
+def user_login(request):
+	# if request is a HTTP POST, try to pull out the relevant information
+	if request.method == 'POST':
+		# pega o username e password da view
+		username = request.POST.get('username')
+		password = request.POST.get('password')
+		# utiliza classes do Django apra autenticar
+		user = authenticate(username=username, password=password)
+
+		if user:
+			if user.is_active:
+				login(request, user)
+				return HttpResponseRedirect('/')
+			else:
+				return HttpResponse("Sua conta está desativada")
+		else:
+			print "Login inválido: {0}, {1}".format(username, password)
+			return HttpResponse("Invalid login details supplied.")
+	else:
+		return render(request, 'tracking/login.html', {})
