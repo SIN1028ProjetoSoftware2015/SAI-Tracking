@@ -33,8 +33,24 @@
           <!-- Login link and language menu -->
           <div class="row">            
             <div class="col-md-1 col-md-offset-9 text-right">
-              <a href="#" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus
-sagittis lacus vel augue laoreet rutrum faucibus.">Login</a>
+              <!-- Formulário de Login oculto por padrão. Visivel via popover -->
+              <div class="hidden">
+                <form id="login_form" method="post" action="/tracking/login">
+                  {% csrf_token %}
+                  <!-- Username-->
+                  <div class="form-group">
+                    <label class="control-label" for="username">Login:</label>
+                    <input id="username" name="username" type="text" placeholder="usuario@dominio.com" class="form-control input-md" required="">
+                  </div>
+                  <!-- Password -->
+                  <div class="form-group">
+                    <label for="password" class="control-label">Senha:</label>
+                    <input id="password" name="password" type="password" class="form-control">
+                  </div>
+                  <button type="submit" class="btn btn-default">Entrar</button>
+                </form>
+              </div>
+              <a href="#" data-container="body" data-toggle="popover" data-placement="bottom">Login</a>
             </div>
             <div class="col-xs-6 col-md-2">
               <div class="dropdown noselect" id="downdown-lang">
