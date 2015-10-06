@@ -5,7 +5,7 @@
   <div class="row">
     <div class="col-md-12">
       <div id="pagina-cabecalho" class="page-header">
-        <h1>Alunos estrangeiros</h1>
+        <h1>Solicitação de Matrícula na Modalidade Intercâmbio</h1>
       </div>
     </div>
   </div>
@@ -22,6 +22,9 @@
                   <li><a href="#tab2" data-toggle="tab">Passo 2</a></li>
                   <li><a href="#tab3" data-toggle="tab">Passo 3</a></li>
                   <li><a href="#tab4" data-toggle="tab">Passo 4</a></li>
+                  <li><a href="#tab5" data-toggle="tab">Passo 5</a></li>
+                  <li><a href="#tab6" data-toggle="tab">Passo 6</a></li>
+                  <li><a href="#tab7" data-toggle="tab">Passo 7</a></li>
                 </ul>
               </div>
             </div>
@@ -32,19 +35,11 @@
           <div class="tab-content">
             <div class="tab-pane" id="tab1">
               <h3>Dados pessoais</h3>
-              <!-- Nome-->
+              <!-- Nome completo-->
               <div class="form-group">
-                <label class="col-md-4 control-label" for="nome">Nome:</label>
+                <label class="col-md-4 control-label" for="nome">Nome completo:</label>
                 <div class="col-md-8">
                   <input id="nome" name="nome" type="text" placeholder="" class="form-control input-md" required="">
-                </div>
-              </div>
-
-              <!-- Sobrenome-->
-              <div class="form-group">
-                <label class="col-md-4 control-label" for="sobrenome">Sobrenome:</label>
-                <div class="col-md-8">
-                  <input id="sobrenome" name="sobrenome" type="text" placeholder="" class="form-control input-md" required="">
                 </div>
               </div>
 
@@ -253,11 +248,10 @@
                 <div class="col-md-8">
                   <select name="nivel_estudo" id="nivel_estudo" class="form-control select-md">
                     <option value="graduacao">Graduação</option>
-                    <option value="especializacao">Especialização</option>
-                    <option value="mestrado">Mestrado</option>
-                    <option value="doutorado">Doutorado</option>
-                    <option value="posdoc">Pós-Doutorado</option>
-                    <option value="estagio">Estágio</option>
+                    <option value="graduacao">Especialização</option>
+                    <option value="graduacao">Mestrado</option>
+                    <option value="graduacao">Doutorado</option>
+                    <option value="graduacao">Pós-Doutorado</option>
                   </select>
                 </div>
               </div>
@@ -280,6 +274,50 @@
 
             </div>
             <div class="tab-pane" id="tab5">
+              <h2>Disciplinas /atividades a serem realizadas:</h2>
+              <br /><br />
+              <div class="table-responsive">
+
+
+
+
+                <table id="products-table" class="table table-hover table-bordered">
+                  <tbody>
+                    <tr>
+                      <th>Sem./ano</th>
+                      <th>Codigo/Nome Disciplina</th>
+                      <th>Creditos/Carga Horaria</th>
+                      <th>Codigo/Nome Disciplina</th>
+                      <th>Creditos/Carga Horaria</th>
+                      <th class="actions">Ações</th>
+                    </tr>
+                    <tr>
+                      <td><input type="text" name="Sem_ano"></td>
+                      <td><input type="text" name="cod_disc"></td>
+                      <td><input type="text" name="Cred_carg"></td>
+                      <td><input type="text" name="Cod_disc_2"></td>
+                      <td><input type="text" name="Cred_carg_2"></td>
+                      <td class="actions">
+                        <button class="btn btn-large btn-danger" onclick="RemoveTableRow(this)" type="button">Remover</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <td colspan="6" style="text-align: left;">
+                        <button class="btn btn-large btn-success" onclick="AddTableRow(this)" type="button">Adicionar linha</button>
+                      </td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+
+
+
+
+
+            </div>
+            <div class="tab-pane" id="tab6">
               <h3>Dados após chegada ao Brasil</h3>
               <!-- Text input-->
               <div class="form-group">
@@ -311,9 +349,6 @@
                   <input id="rne" name="rne" type="text" placeholder="" class="form-control input-md" required="">
                 </div>
               </div>
-            </div>
-            <div class="tab-pane" id="tab6">
-              6
             </div>
             <div class="tab-pane" id="tab7">
               <h3>Anexar documentos</h3>
@@ -397,60 +432,9 @@
                   </div>
                 </div>
               </div>
-              <div class="tab-pane" id="tab4">
-                <div class="table-responsive">
 
-                  <table id="produto-tabela" class="table table-hover table-bordered">
-                    <tbody>
-                      <p>*<strong>LEMBRE-SE:</strong>a matricula e de responsabilidade do aluno e necessita ser a cada semestre. Observe o calendario!</p>
-                      <tr>
-                        <th>Assinatura do aluno:</th>
-                        <th>data___/___/___</th>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="table-responsive">
-                  <table id="produto-tabela" class="table table-hover table-bordered">
-                    <tbody>
-                      <tr>
-                        <th>Coordenador do curso na UFSM:</th>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="table-responsive">
-                  <table id="produto-tabela" class="table table-hover table-bordered">
-                    <tbody>
-                      <tr>
-                        <th><strong>SAI &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp </strong></th>
-                        <th><strong>PROGRAD</strong></th>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-
-                <br /></br />
-                <div class="table-responsive">
-                  <table id="produto-tabela" class="table table-hover table-bordered">
-                    <tbody>
-                      <tr>
-                        <th>assinatura &nbsp &nbsp   &nbsp &nbsp &nbsp &nbsp data  &nbsp &nbsp   &nbsp &nbsp  &nbsp &nbsp  carimbo</th>
-                        <th>assinatura &nbsp &nbsp   &nbsp &nbsp &nbsp &nbsp data  &nbsp &nbsp   &nbsp &nbsp &nbsp &nbsp   carimbo</th>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <p>*Deverão ser feitas duas vias deste documento (01 para PROGRAD; 01 para SAI)</p>
-                <div class="form-group">
-                  <div class="row">
-                    <div class="col-md-6 col-md-offset-6">
-                      <input class="btn btn-success" type="submit" value="Enviar respostas">
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
+
             <ul class="pager wizard">
               <li class="previous"><a href="#">Anterior</a></li>
               <li class="next"><a href="#">Próxima</a></li>
