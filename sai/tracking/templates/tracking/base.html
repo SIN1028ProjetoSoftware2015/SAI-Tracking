@@ -28,7 +28,7 @@
       <!-- barra com logotipo SAI e menu -->
       <div class="row">
         <div class="col-md-1 hidden-xs hidden-sm">
-          <img src="{% static "tracking/images/logo_sai.png" %}" class="img-responsive center-block logo-sai" alt="Marca da Secretaria de Apoio Internacional da UFSM">
+          <a href="{% url 'index' %}"</a> <img src="{% static "tracking/images/logo_sai.png" %}" class="img-responsive center-block logo-sai" alt="Marca da Secretaria de Apoio Internacional da UFSM" href="{% url 'index' %}">
         </div>
         <div class="col-md-11 loginbar">
           <!-- Login link and language menu -->
@@ -73,11 +73,11 @@
           </div>
           <!-- Project name and navbar -->
           <div class="row">
-            <div class="col-md-3"><h1 class="titulo-site">Projeto SAI</h1></div>
+            <div class="col-md-3"><h1 class="titulo-site"> <a href="{% url 'index' %}" >Projeto SAI </a></h1></div>
             <div class="col-md-9">
               <nav class="navbar" id="menu-principal">
                 <ul class="nav navbar-nav">
-                  <li class="active"><a href="{% url 'index' %}">Início</a></li>
+                 <!-- <li class="active"><a href="{% url 'index' %}">Início</a></li> -->
                   <li><a href="http://site.ufsm.br/sai/">Informações</a></li>
                   <li><a href="{% url 'form_in' %}">Alunos estrangeiros</a></li>
                   <li><a href="{% url 'form_out' %}">Alunos brasileiros</a></li>
