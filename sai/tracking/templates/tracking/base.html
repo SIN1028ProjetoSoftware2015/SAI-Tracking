@@ -1,117 +1,476 @@
-{% load staticfiles %}
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>{% block title %}Projeto SAI Tracking para estudantes em intercâmbio{% endblock %}</title>
-  <link href="{% static "tracking/images/favivon.ico" %} rel="shortcut icon" type="image/vnd.microsoft.icon" />
 
-  <!-- Bootstrap -->
-  <link href="{% static "tracking/css/bootstrap.min.css" %}" rel="stylesheet">
-  <link href="{% static "tracking/css/bootstrap-theme.min.css" %}" rel="stylesheet">
-  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]-->
-<link href="{% static "tracking/css/geral.css" %}" rel="stylesheet">
-<link href="{% static "tracking/css/index.css" %}" rel="stylesheet">
-{% block custom-css %}{% endblock custom-css %}
+
+<!DOCTYPE html>
+  <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en">
+</html><![endif]-->
+   
+  <!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8" lang="en">
+</html><![endif]-->
+   
+  <!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> </html><![endif]-->
+   
+  <!--[if gt IE 8]><!-->
+  <!--<![endif]-->
+<html>
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="CPD/UFSM" />
+  <meta charset="UTF-8" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <script type="text/javascript" src="http://updateyourbrowser.net/asn.js"> </script>
+    <![endif]-->
+
+
+    <link  href="static/tracking/css/bootstrap.min.css"  rel="stylesheet"/>
+    <link href="static/tracking/css/font-awesome.min.css" rel="stylesheet" media="screen" />
+    <link href="static/tracking/css/misc.css" rel="stylesheet" media="screen" />
+    <link href="static/tracking/css/main.css" rel="stylesheet" media="screen" />
+    <link href="static/tracking/css/color-scheme.css" rel="stylesheet" media="screen" />
+    <link href="static/tracking/css/responsive.css" rel="stylesheet" media="screen" />
+    <link href="static/tracking/css/menu.css" rel="stylesheet" media="screen" />
+    <script src="static/tracking/js/jquery.min.js"></script>
+    <script src="static/tracking/js/bootstrap.min.js"></script>    
+
+      <base href="http://w3.ufsm.br/sai/" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="author" content="Super User" />
+  <meta name="generator" content="Joomla! - Open Source Content Management" />
+  <title>Início</title>
+  <link href="sai/images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+  <link rel="stylesheet" href="/sai/components/com_djmediatools/assets/picbox/css/picbox.css" type="text/css" />
+  <link rel="stylesheet" href="/sai/index.php?option=com_djmediatools&amp;task=getcss&amp;format=raw&amp;layout=skitterSlideshow&amp;params=bWlkPTJtJnc9MTE3MCZoPTMwOCZkcD1vdmVyJmR3PTEwMCZhdD0xNi4yMzM3NjYyMzM3NjYmYWg9MTAmY25wPWJlbG93JmNuYT1jZW50ZXImbGlwPXRsJmRiPTAmZGw9MCZyPWNyb3Amdz0xMTcwJmR3PTEwMCZkbD0wJnR3PTEwMCZ0aD0xMDA=" type="text/css" />
+  <script src="/sai/media/system/js/mootools-core.js" type="text/javascript"></script>
+  <script src="/sai/media/system/js/core.js" type="text/javascript"></script>
+  <script src="/sai/media/system/js/caption.js" type="text/javascript"></script>
+  <script src="/sai/components/com_djmediatools/assets/picbox/js/picbox.js" type="text/javascript"></script>
+  <script src="/sai/components/com_djmediatools/layouts/skitterSlideshow/js/jquery-1.6.3.min.js" type="text/javascript"></script>
+  <script src="/sai/components/com_djmediatools/layouts/skitterSlideshow/js/jquery.skitter.min.js" type="text/javascript"></script>
+  <script src="/sai/components/com_djmediatools/layouts/skitterSlideshow/js/jquery.easing.1.3.js" type="text/javascript"></script>
+  <script src="/sai/components/com_djmediatools/layouts/skitterSlideshow/js/jquery.animate-colors-min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+window.addEvent('load', function() {
+        new JCaption('img.caption');
+      });
+jQuery(document).ready(function() { jQuery('#box_skitter2m').skitter({animation: 'random'}); }); 
+  </script>
+
+    
+    <link rel="shortcut icon" href="/sai/templates/padrao/favicon.ico" />
+    
+   
+  
 </head>
 <body>
-  <div class="container-fluid dark-blue">
-    <div class="container utility-bar">
-      <!-- barra com logotipo SAI e menu -->
-      <div class="row">
-        <div class="col-md-1 hidden-xs hidden-sm">
-          <a href="{% url 'index' %}"</a> <img src="{% static "tracking/images/logo_sai.png" %}" class="img-responsive center-block logo-sai" alt="Marca da Secretaria de Apoio Internacional da UFSM" href="{% url 'index' %}">
-        </div>
-        <div class="col-md-11 loginbar">
-          <!-- Login link and language menu -->
-          <div class="row">            
-            <div class="col-md-2 col-md-offset-8 text-right">
-              {% if user.is_authenticated %}
-              <span>Bem vindo {{ user.username }}</span>
-              {% else %}
-              <!-- Formulário de Login oculto por padrão. Visivel via popover -->
-              <div class="hidden">
-                <form id="login_form" method="post" action="/tracking/login">
-                  {% csrf_token %}
-                  <!-- Username-->
-                  <div class="form-group">
-                    <label class="control-label" for="username">Login:</label>
-                    <input id="username" name="username" type="text" placeholder="usuario@dominio.com" class="form-control input-md" required="">
-                  </div>
-                  <!-- Password -->
-                  <div class="form-group">
-                    <label for="password" class="control-label">Senha:</label>
-                    <input id="password" name="password" type="password" class="form-control">
-                  </div>
-                  <button type="submit" class="btn btn-default">Entrar</button>
-                </form>
-              </div>
-              <a href="#" data-container="body" data-toggle="popover" data-placement="bottom">Login</a>
-              {% endif %}
-            </div>
-            <div class="col-xs-6 col-md-2">
-              <div class="dropdown noselect" id="downdown-lang">
-                <div class="dropdown-toggle" id="dropdown-lang-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                  <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
-                  Internacional
-                  <span class="caret"></span>
-                </div>
-                <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-lang-btn">
-                  <li><a href="#"><img src="{% static "tracking/images/eua_flag.bmp" %}" alt="Translate to English"> English</a></li>
-                  <li><a href="#"><img src="{% static "tracking/images/spain_flag.bmp" %}" alt="Tra"> Español</a></li>
-                </ul>
-              </div>
-            </div>
+  <div id="barra-brasil">
+    <a href="http://brasil.gov.br"
+    style="background:#7F7F7F; height: 20px; padding:4px 0 4px 10px; display: block; font-family:sans,sans-serif; text-decoration:none; color:white;">
+    Portal do Governo Brasileiro</a>
+  </div>
+ 
+  <div id="barra-ufsm">
+  </div>
+  
+  <header class="site-header">
+  <div class="container">
+    <div class="row" style='background-color: white;'>
+      <div class="col-sm-7">
+        <div class="logo" style="background-color: white; padding: 15px; text-align: left;">
+          <div class="col-sm-2" style="padding: 18px">
+             <a href="http://www.ufsm.br/" title="UFSM" rel="home">
+                <img class='hidden-xs' src='/sai/images/brasao.png' height="100" alt="UFSM" />
+             </a>
           </div>
-          <!-- Project name and navbar -->
-          <div class="row">
-            <div class="col-md-3"><h1 class="titulo-site"> <a href="{% url 'index' %}" >Projeto SAI </a></h1></div>
-            <div class="col-md-9">
-              <nav class="navbar" id="menu-principal">
-                <ul class="nav navbar-nav">
-                 <!-- <li class="active"><a href="{% url 'index' %}">Início</a></li> -->
-                  <li><a href="http://site.ufsm.br/sai/">Informações</a></li>
-                  <li><a href="{% url 'form_in' %}">Alunos estrangeiros</a></li>
-                  <li><a href="{% url 'form_out' %}">Alunos brasileiros</a></li>
-                </ul>
-              </nav>
-            </div>
+        
+          <div class="col-sm-9" style="padding: 18px">
+                <img src='/sai/images/banner.png' height="100" alt="" />
           </div>
         </div>
       </div>
-      <!-- fim barra com logotipo SAI e menu -->
-    </div><!-- /.container -->
-  </div><!-- /.container-fluid -->
+      <div class="col-sm-5 header-right">
+        <ul class="small-links">
+          
 
-  {% block content %}{% endblock content %}
-
-  <!-- New container for the footer to limit the with and center the content -->
-  <div class="container">
-    <!-- FOOTER -->
-    <footer>
-      <p>&copy; UFSM - Universidade Federal de Santa Maria &middot; <a href="#">Privacidade</a> &middot; <a href="#">Termos de Uso</a></p>
-    </footer>
+          <li>
+            <a id="fontDefault" href="#">A</a>
+          </li>
+      
+          <li>
+            <a id="fontLarge" href="#">A+</a>
+          </li>
+      
+          <li>
+            <a id="fontSmall" href="#">A-</a>
+          </li>
+        </ul>
+    
+        <div class="search-form hidden-xs">
+          <form class="navbar-form search_form" role="search" method="get" action="index.php/component/search/">
+            <input type="search" name="searchword" class="form-control search_form" placeholder="Buscar no site"
+            style='border-radius: 0px;' />
+            <button class='btn btn-small' id="btn-busca"><i class="fa fa-search"></i></button>
+          </form>
+        </div>
+    
+        <ul class="small-links">
+      <li><a href='http://portal.ufsm.br/indicadores/' target='_blank'>UFSM em Números</a></li>
+        </ul>
+    
+      </div>
+      <!-- /.header-right -->
+    </div>
   </div>
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="{% static "tracking/js/bootstrap.min.js" %}"></script>
-  <script>
-    $('[data-toggle="popover"]').popover({
-      html: true,
-        content: function () {
-          return $(this).prev().html();
-        }
-    });
-  </script>
-  {% block custom-js %}{% endblock custom-js %}
-</body>
+  <!-- /.container -->
+  
+  <!-- Inicio Menu(azul) abaixo do logo da SAI -->
+  <div class="nav-bar-main" role="navigation">
+            <div class="container nopad" >
+        
+<ul class="menutopo skyblue megamenu">
+<li class="item-101 current active"><a href="/sai/" >Início</a></li><li class="item-107 deeper parent"><a href="#" >Sobre</a><ul><li class="item-191"><a href="/sai/index.php/sobre/a-sai" >A SAI</a></li><li class="item-192"><a href="/sai/index.php/sobre/servicos" >Serviços</a></li></ul></li><li class="item-127 deeper parent"><a href="/sai/index.php/editais" >Editais</a><ul><li class="item-128"><a href="/sai/index.php/editais/editais-abertos" >Abertos</a></li><li class="item-129"><a href="/sai/index.php/editais/editais-finalizados" >Fechados</a></li></ul></li><li class="item-161"><a href="/sai/index.php/noticias" >Notícias</a></li><li class="item-193 deeper parent"><a href="#" >Da UFSM para o Mundo</a><ul><li class="item-108"><a href="http://w3.ufsm.br/sai/index.php/convenios" >Convênios Ativos</a></li><li class="item-226"><a href="/sai/index.php/2015-08-10-12-33-42/inativos" >Convênios Inativos</a></li><li class="item-195"><a href="http://w3.ufsm.br/sai/index.php/programas-de-intercambio-para-alunos" >Programa de Intercâmbio</a></li><li class="item-125"><a href="/sai/index.php/2015-08-10-12-33-42/csf" >Ciência Sem Fronteiras</a></li><li class="item-110"><a href="http://w3.ufsm.br/sai/index.php/bolsas" >Bolsas</a></li><li class="item-111"><a href="http://w3.ufsm.br/sai/index.php/estagios" >Estágios</a></li><li class="item-196"><a href="http://w3.ufsm.br/sai/index.php/agencias" >Agências Financiadoras</a></li><li class="item-198"><a href="http://w3.ufsm.br/sai/index.php/programas-publicos" >Programas Públicos</a></li><li class="item-203"><a href="http://w3.ufsm.br/sai/index.php/oportunidades" >Oportunidades</a></li><li class="item-184"><a href="http://w3.ufsm.br/sai/index.php/dicas" >Dicas</a></li><li class="item-222"><a href="/sai/index.php/2015-08-10-12-33-42/programa-pelo-mundo" >Programa Pelo Mundo</a></li><li class="item-204"><a href="http://w3.ufsm.br/sai/index.php/relatos" >Relatos</a></li></ul></li><li class="item-194 deeper parent"><a href="#" >Study at UFSM</a><ul><li class="item-199"><a href="http://site.ufsm.br/en_ufsm/welcome-ufsm" >Who we are</a></li><li class="item-219"><a href="http://w3.ufsm.br/sai/index.php/about-ufsm" >About UFSM</a></li><li class="item-220"><a href="http://w3.ufsm.br/sai/index.php/about-santa-maria" >About Santa Maria</a></li><li class="item-201"><a href="http://w3.ufsm.br/sai/index.php/cursos" >Courses</a></li><li class="item-200"><a href="http://w3.ufsm.br/sai/index.php/o-que-a-universidade-oferece" >What the university offers</a></li><li class="item-202"><a href="/sai/index.php/2015-08-10-12-41-43/candidatar" >How to apply for</a></li><li class="item-113"><a href="http://w3.ufsm.br/sai/index.php/apadrinhamento" >International friend</a></li><li class="item-185 deeper parent"><a href="http://w3.ufsm.br/sai/index.php/hospedagem" >Accommodation</a><ul><li class="item-223"><a href="/sai/index.php/2015-08-10-12-41-43/hospedagem2/hospede" >Hospede um Estrangeiro</a></li></ul></li><li class="item-205"><a href="http://w3.ufsm.br/sai/index.php/reports" >Reports </a></li></ul></li><li class="item-224 deeper parent"><a href="#" >Auxilie um Estrangeiro</a><ul><li class="item-218"><a href="/sai/index.php/2015-09-28-12-56-12/amigo-internacional" >Amigo Internacional</a></li><li class="item-225"><a href="/sai/index.php/2015-09-28-12-56-12/hospede" >Hospede um Estrangeiro</a></li></ul></li><li class="item-114"><a href="/sai/index.php/faq" >FAQ</a></li></ul>
+
+      </div>
+  </div>
+<!-- Final Menu(azul) abaixo do logo da SAI -->
+ </header>
+  
+  
+  
+  
+ 
+  <!--Inicio dos slides de imagens -->
+
+  <div class="container">
+    <!-- slider + ads -->
+      <div class="row">
+      <div class="col-md-12 nopad">
+            <div class="moduletable">
+          
+<div id="box_skitter2m" class="box_skitter">
+  
+    <ul>          
+                  
+        <li>
+                                      
+  <a rel="lightbox-grid2m" title="20150328_155610" href="/sai/images/galeria/20150328_155610.jpg" target="_self">
+    <img src="/sai/media/djmediatools/cache/1170x308-crop-90-images_galeria_20150328_155610.jpg" alt="20150328_155610" class="dj-image" />  </a>
+                      
+          <div class="label_text">
+            
+                  </div> 
+        </li>       
+                  
+        <li>
+                                      
+  <a rel="lightbox-grid2m" title="biblioteca_2" href="/sai/images/galeria/biblioteca_2.jpg" target="_self">
+    <img src="/sai/media/djmediatools/cache/1170x308-crop-90-images_galeria_biblioteca_2.jpg" alt="biblioteca_2" class="dj-image" />  </a>
+                      
+          <div class="label_text">
+            
+                  </div> 
+        </li>       
+                  
+        <li>
+                                      
+  <a rel="lightbox-grid2m" title="biblioteca_3" href="/sai/images/galeria/biblioteca_3.jpg" target="_self">
+    <img src="/sai/media/djmediatools/cache/1170x308-crop-90-images_galeria_biblioteca_3.jpg" alt="biblioteca_3" class="dj-image" />  </a>
+                      
+          <div class="label_text">
+            
+                  </div> 
+        </li>       
+                  
+        <li>
+                                      
+  <a rel="lightbox-grid2m" title="ctg" href="/sai/images/galeria/ctg.JPG" target="_self">
+    <img src="/sai/media/djmediatools/cache/1170x308-crop-90-images_galeria_ctg.jpg" alt="ctg" class="dj-image" />  </a>
+                      
+          <div class="label_text">
+            
+                  </div> 
+        </li>       
+                  
+        <li>
+                                      
+  <a rel="lightbox-grid2m" title="DSCN1164" href="/sai/images/galeria/DSCN1164.JPG" target="_self">
+    <img src="/sai/media/djmediatools/cache/1170x308-crop-90-images_galeria_dscn1164.jpg" alt="DSCN1164" class="dj-image" />  </a>
+                      
+          <div class="label_text">
+            
+                  </div> 
+        </li>       
+                  
+        <li>
+                                      
+  <a rel="lightbox-grid2m" title="DSCN1170" href="/sai/images/galeria/DSCN1170.JPG" target="_self">
+    <img src="/sai/media/djmediatools/cache/1170x308-crop-90-images_galeria_dscn1170.jpg" alt="DSCN1170" class="dj-image" />  </a>
+                      
+          <div class="label_text">
+            
+                  </div> 
+        </li>       
+                  
+        <li>
+                                      
+  <a rel="lightbox-grid2m" title="DSCN1173" href="/sai/images/galeria/DSCN1173.JPG" target="_self">
+    <img src="/sai/media/djmediatools/cache/1170x308-crop-90-images_galeria_dscn1173.jpg" alt="DSCN1173" class="dj-image" />  </a>
+                      
+          <div class="label_text">
+            
+                  </div> 
+        </li>       
+                  
+        <li>
+                                      
+  <a rel="lightbox-grid2m" title="grazi_13" href="/sai/images/galeria/grazi_13.jpg" target="_self">
+    <img src="/sai/media/djmediatools/cache/1170x308-crop-90-images_galeria_grazi_13.jpg" alt="grazi_13" class="dj-image" />  </a>
+                      
+          <div class="label_text">
+            
+                  </div> 
+        </li>       
+                  
+        <li>
+                                      
+  <a rel="lightbox-grid2m" title="grazi_19" href="/sai/images/galeria/grazi_19.jpg" target="_self">
+    <img src="/sai/media/djmediatools/cache/1170x308-crop-90-images_galeria_grazi_19.jpg" alt="grazi_19" class="dj-image" />  </a>
+                      
+          <div class="label_text">
+            
+                  </div> 
+        </li>       
+                  
+        <li>
+                                      
+  <a rel="lightbox-grid2m" title="grazi_41" href="/sai/images/galeria/grazi_41.jpg" target="_self">
+    <img src="/sai/media/djmediatools/cache/1170x308-crop-90-images_galeria_grazi_41.jpg" alt="grazi_41" class="dj-image" />  </a>
+                      
+          <div class="label_text">
+            
+                  </div> 
+        </li>       
+                  
+        <li>
+                                      
+  <a rel="lightbox-grid2m" title="grazi_42" href="/sai/images/galeria/grazi_42.jpg" target="_self">
+    <img src="/sai/media/djmediatools/cache/1170x308-crop-90-images_galeria_grazi_42.jpg" alt="grazi_42" class="dj-image" />  </a>
+                      
+          <div class="label_text">
+            
+                  </div> 
+        </li>       
+                  
+        <li>
+                                      
+  <a rel="lightbox-grid2m" title="grazi_68" href="/sai/images/galeria/grazi_68.jpg" target="_self">
+    <img src="/sai/media/djmediatools/cache/1170x308-crop-90-images_galeria_grazi_68.jpg" alt="grazi_68" class="dj-image" />  </a>
+                      
+          <div class="label_text">
+            
+                  </div> 
+        </li>       
+                  
+        <li>
+                                      
+  <a rel="lightbox-grid2m" title="grazi_82" href="/sai/images/galeria/grazi_82.jpg" target="_self">
+    <img src="/sai/media/djmediatools/cache/1170x308-crop-90-images_galeria_grazi_82.jpg" alt="grazi_82" class="dj-image" />  </a>
+                      
+          <div class="label_text">
+            
+                  </div> 
+        </li>       
+                  
+        <li>
+                                      
+  <a rel="lightbox-grid2m" title="ru_1" href="/sai/images/galeria/ru_1.jpg" target="_self">
+    <img src="/sai/media/djmediatools/cache/1170x308-crop-90-images_galeria_ru_1.jpg" alt="ru_1" class="dj-image" />  </a>
+                      
+          <div class="label_text">
+            
+                  </div> 
+        </li>       
+                  
+        <li>
+                                      
+  <a rel="lightbox-grid2m" title="teatro" href="/sai/images/galeria/teatro.JPG" target="_self">
+    <img src="/sai/media/djmediatools/cache/1170x308-crop-90-images_galeria_teatro.jpg" alt="teatro" class="dj-image" />  </a>
+                      
+          <div class="label_text">
+            
+                  </div> 
+        </li>       
+                  
+        <li>
+                                      
+  <a rel="lightbox-grid2m" title="telhado 21" href="/sai/images/galeria/telhado 21.JPG" target="_self">
+    <img src="/sai/media/djmediatools/cache/1170x308-crop-90-images_galeria_telhado_21.jpg" alt="telhado 21" class="dj-image" />  </a>
+                      
+          <div class="label_text">
+            
+                  </div> 
+        </li>       
+                  
+        <li>
+                                      
+  <a rel="lightbox-grid2m" title="ufsm_12" href="/sai/images/galeria/ufsm_12.jpg" target="_self">
+    <img src="/sai/media/djmediatools/cache/1170x308-crop-90-images_galeria_ufsm_12.jpg" alt="ufsm_12" class="dj-image" />  </a>
+                      
+          <div class="label_text">
+            
+                  </div> 
+        </li>       
+                  
+        <li>
+                                      
+  <a rel="lightbox-grid2m" title="ufsm_20" href="/sai/images/galeria/ufsm_20.JPG" target="_self">
+    <img src="/sai/media/djmediatools/cache/1170x308-crop-90-images_galeria_ufsm_20.jpg" alt="ufsm_20" class="dj-image" />  </a>
+                      
+          <div class="label_text">
+            
+                  </div> 
+        </li>       
+                  
+        <li>
+                                      
+  <a rel="lightbox-grid2m" title="vista vale" href="/sai/images/galeria/vista vale.jpg" target="_self">
+    <img src="/sai/media/djmediatools/cache/1170x308-crop-90-images_galeria_vista_vale.jpg" alt="vista vale" class="dj-image" />  </a>
+                      
+          <div class="label_text">
+            
+                  </div> 
+        </li>       
+                      
+        </ul>
+</div>
+
+<div style="clear: both"></div>   </div>
+  
+      </div>
+      <!-- /.col-md-12 -->
+    </div>
+    
+    
+    <div class="row">
+      <div class="col-md-1">
+    
+    </div>
+      <div class="col-md-10">
+<br>
+    
+    <div class="item-page">
+
+<p style="text-align: center;">&nbsp;</p>
+
+</div>
+    
+<br>
+      </div>
+      <div class="col-md-1">
+    
+      </div>
+    </div>
+  
+  </div>
+    <!--Final dos slides de imagens -->
+  
+<!--Inicio do rodapé-->
+<footer class="site-footer">
+    <div class="container">
+      <div class="row fundo-transparente">
+        <div class="col-md-4 borda">
+          <div class="footer-widget">
+            <h4 class="footer-widget-title">Universidade Federal de Santa Maria</h4>
+            <p>Av. Roraima nº 1000
+            <br />Cidade Universitária
+            <br />Bairro Camobi
+            <br />Santa Maria - RS
+            <br />CEP: 97105-900
+            <br />+55 (55) 3220-8000</p>
+          </div>
+        </div>
+    
+    <div class="col-md-4 borda">
+          <div class="footer-widget">
+                <div class="moduletable">
+        
+
+<div class="custom"  >
+  <p><span style="color: white; font-family: ZapfHumnstBTRoman, Helvetica, Verdana, sans-serif; font-size: 13px; font-weight: bold; line-height: 1.1; text-transform: uppercase; background-color: #01438c;">Endereço postal</span></p>
+<p style="margin: 0px 0px 10px; color: white; font-family: Helvetica, Arial, sans-serif; font-size: 13px; line-height: 23px; background-color: #01438c;">Av. Roraima nº 1000&nbsp;<br />Predio 47 (Reitoria)&nbsp;<br />7° Andar, sala 748<br />Santa Maria - RS&nbsp;<br />CEP: 97105-900&nbsp;</p></div>
+    </div>
+  
+          </div>
+        </div>
+    
+    
+    <div class="col-md-4">
+          <div class="footer-widget">
+          <div class="moduletable">
+          
+
+<div class="custom"  >
+  <h4 class="footer-widget-title" style="font-family: ZapfHumnstBTRoman, Helvetica, Verdana, sans-serif; line-height: 1.1; color: white; margin: 0px 0px 10px; font-size: 13px; text-transform: uppercase; background-color: #01438c;">CONTATO</h4>
+<p style="margin: 0px 0px 10px; color: white; font-family: Helvetica, Arial, sans-serif; font-size: 13px; line-height: 23px; background-color: #01438c;">E-mail:&nbsp;<a style="color: #4782b2; font-family: helvetica; font-size: 13px; line-height: 23px; background-image: initial; background-attachment: initial; background-position: 0px 0px; background-repeat: initial;" href="mailto:sai@ufsm.br">&nbsp;</a><a href="mailto:sai@ufsm.br">sai@ufsm.br</a><br /><span style="color: #ffffff; font-family: Helvetica, Arial, sans-serif; font-size: 13px; line-height: 23px; background-color: #01438c;">Fones: +55 (55) 3220-8774</span><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;+55 (55) 3220-8934<br /><a href="/sai/index.php/noticias/90-horario-de-atendimento-sai">Horário de Atendimento</a></p>
+<p style="margin: 0px 0px 10px; color: white; font-family: Helvetica, Arial, sans-serif; font-size: 13px; line-height: 23px; background-color: #01438c;"><a href="https://www.facebook.com/sai.ufsm?_rdr=p"><img src="/sai/images/9ff3c4_d15a6f59babe40d9a3034bec671a17f4.gif" alt="9ff3c4 d15a6f59babe40d9a3034bec671a17f4" width="37" height="39" /></a></p></div>
+    </div>
+  
+          </div>
+        </div>
+    
+
+      </div>
+      <!-- /.row -->
+    
+      <div class="bottom-footer">
+        <div class="row fundo-transparente">
+          <div class="col-md-5">
+            <p class="small-text">Copyright 2015. UFSM</p>
+          </div>
+          <!-- /.col-md-5 -->
+          <div class="col-md-7">
+            
+          </div>
+          <!-- /.col-md-7 -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.bottom-footer -->
+    </div>
+    <!-- /.container -->
+  </footer>
+  <!-- /.site-footer -->
+  <!--Final do rodapé-->  
+  
+  
+
+ <script src="/sai/templates/padrao/js/plugins.js"></script> <!--  ?  -->
+ <script src="/sai/templates/padrao/js/menu.js"></script> <!--barra(azul) menu entre o logo da SAI e as fotos -->
+ <script src='http://site.ufsm.br/arquivos/barra.js'></script> <!--segunda barra superior (laranjada)-->
+ <script src="/sai/templates/padrao/js/custom.js"></script><!--primeira barra superior (cinza)-->
+ <link href="/sai/templates/padrao/css/extra.css" rel="stylesheet" media="screen" /> <!--  ?  -->
+    
+
+
+<style>
+  .pagi{
+    display:inline;}
+  
+  
+  td div li {
+    padding-bottom: 7px;
+}
+  
+  .nivo-controlNav { display:none; }
+</style>    
+  
+
+  </body>
+  
 </html>
+
