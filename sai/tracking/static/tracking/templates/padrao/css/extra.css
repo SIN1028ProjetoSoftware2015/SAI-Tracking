@@ -1,0 +1,87 @@
+input.gsc-search-button, input.gsc-search-button:hover {
+        background-color: #FF7700;
+        color: white;        
+    }
+    
+    input.gsc-search-button-v2 {
+        margin: 0;
+        height: 100% !important;
+        border-radius: 0px;
+        width: 35px !important;
+        padding: 9px;
+        border: 0px;
+    }
+    
+    .gsc-search-box-tools .gsc-search-box .gsc-input{
+        padding: 0px;
+    }
+    .gsib_a, .gsib_a input, .gsc-input, .gsst_b, .gsib_b {
+        background-color: #DDD4A9 !important;
+        color: white !important;
+        background-image: none !important; 
+    }
+    .gsc-search-button{
+        height: 100%;
+        vertical-align: initial;
+        padding: 0px;
+        margin: 0px;
+        line-height: 1px;
+        border-radius: 0px;
+        border:0px;
+        
+    }
+    
+    .hb:hover, .hb a:hover {
+        color: white !important;
+        text-decoration: underline;
+    }
+    
+    .cinza a:hover {
+        text-decoration: underline;
+    }
+    
+    .agendaativa {
+        text-decoration: underline;
+    }
+    
+    #slider-testimonials ul li{
+        font-style: normal;
+    }
+    
+    #agenda .cor {
+        width: 10px;
+    }
+    
+    #eventosdia a {
+        color: #666666 !important;
+    }
+    
+    #eventosdia a:hover {
+        text-decoration: underline;
+    }
+    
+    #agenda li{
+        padding: 0px !important;
+    }
+    
+    .link:hover{
+        text-decoration: underline;
+    }
+    
+    .slider-caption p {
+        color: #666 !important;
+    }
+    
+    
+   .mainBtn, .s-month, .request-information .submit_field .mainBtn, .tag-items a, .main-menu li ul, .social_icons li a, .footer-media-icons li a, .flex-direction-nav a, .btn-warning, .fundo-laranja {     
+        background-color: #107a4a !important;
+    }
+    
+    .megamenu>li:hover>a, .megamenu>li.active>a {
+        background-color: #62B4E5 !important;
+    }
+    
+    .btn-topo {
+        background-color: #107a4a !important;
+        border-color: #107a4a !important;
+    }

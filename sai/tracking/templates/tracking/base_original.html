@@ -1,0 +1,116 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>{% block title %}Projeto SAI Tracking para estudantes em intercâmbio{% endblock %}</title>
+
+  <!-- Bootstrap -->
+  <link href="{% static "tracking/css/bootstrap.min.css" %}" rel="stylesheet">
+  <link href="{% static "tracking/css/bootstrap-theme.min.css" %}" rel="stylesheet">
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+<link href="{% static "tracking/css/geral.css" %}" rel="stylesheet">
+<link href="{% static "tracking/css/index.css" %}" rel="stylesheet">
+{% block custom-css %}{% endblock custom-css %}
+</head>
+<body>
+  <div class="container-fluid dark-blue">
+    <div class="container utility-bar">
+      <!-- barra com logotipo SAI e menu -->
+      <div class="row">
+        <div class="col-md-1 hidden-xs hidden-sm">
+          <a href="{% url 'index' %}"</a> <img src="{% static "tracking/images/logo_sai.png" %}" class="img-responsive center-block logo-sai" alt="Marca da Secretaria de Apoio Internacional da UFSM" href="{% url 'index' %}">
+        </div>
+        <div class="col-md-11 loginbar">
+          <!-- Login link and language menu -->
+          <div class="row">            
+            <div class="col-md-2 col-md-offset-8 text-right">
+              {% if user.is_authenticated %}
+              <span>Bem vindo {{ user.username }}</span>
+              {% else %}
+              <!-- Formulário de Login oculto por padrão. Visivel via popover -->
+              <div class="hidden">
+                <form id="login_form" method="post" action="/tracking/login">
+                  {% csrf_token %}
+                  <!-- Username-->
+                  <div class="form-group">
+                    <label class="control-label" for="username">Login:</label>
+                    <input id="username" name="username" type="text" placeholder="usuario@dominio.com" class="form-control input-md" required="">
+                  </div>
+                  <!-- Password -->
+                  <div class="form-group">
+                    <label for="password" class="control-label">Senha:</label>
+                    <input id="password" name="password" type="password" class="form-control">
+                  </div>
+                  <button type="submit" class="btn btn-default">Entrar</button>
+                </form>
+              </div>
+              <a href="#" data-container="body" data-toggle="popover" data-placement="bottom">Login</a>
+              {% endif %}
+            </div>
+            <div class="col-xs-6 col-md-2">
+              <div class="dropdown noselect" id="downdown-lang">
+                <div class="dropdown-toggle" id="dropdown-lang-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                  <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
+                  Internacional
+                  <span class="caret"></span>
+                </div>
+                <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-lang-btn">
+                  <li><a href="#"><img src="{% static "tracking/images/eua_flag.bmp" %}" alt="Translate to English"> English</a></li>
+                  <li><a href="#"><img src="{% static "tracking/images/spain_flag.bmp" %}" alt="Tra"> Español</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Project name and navbar -->
+          <div class="row">
+            <div class="col-md-3"><h1 class="titulo-site"> <a href="{% url 'index' %}" >Projeto SAI </a></h1></div>
+            <div class="col-md-9">
+              <nav class="navbar" id="menu-principal">
+                <ul class="nav navbar-nav">
+                 <!-- <li class="active"><a href="{% url 'index' %}">Início</a></li> -->
+                  <li><a href="http://site.ufsm.br/sai/">Informações</a></li>
+                  <li><a href="{% url 'form_in' %}">Alunos estrangeiros</a></li>
+                  <li><a href="{% url 'form_out' %}">Alunos brasileiros</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- fim barra com logotipo SAI e menu -->
+    </div><!-- /.container -->
+  </div><!-- /.container-fluid -->
+
+  {% block content %}{% endblock content %}
+
+  <!-- New container for the footer to limit the with and center the content -->
+  <div class="container">
+    <!-- FOOTER -->
+    <footer>
+      <p>&copy; UFSM - Universidade Federal de Santa Maria &middot; <a href="#">Privacidade</a> &middot; <a href="#">Termos de Uso</a></p>
+    </footer>
+  </div>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="{% static "tracking/js/bootstrap.min.js" %}"></script>
+  <script>
+    $('[data-toggle="popover"]').popover({
+      html: true,
+        content: function () {
+          return $(this).prev().html();
+        }
+    });
+  </script>
+  {% block custom-js %}{% endblock custom-js %}
+</body>
+</html>
