@@ -1,6 +1,8 @@
 {% extends "tracking/base.html" %}
 {% load staticfiles %}
 {% block content %}
+
+
 <div class="container">
   <div class="row">
     <div class="col-md-12">
@@ -465,6 +467,6 @@
 {% endblock content %}
 
 {% block custom-js %}
-<script src="{% static "tracking/js/jquery.bootstrap.wizard.min.js" %}"></script>
-<script src="{% static "tracking/js/wizard-custom.js" %}"></script>
+<script src={% static "tracking/js/jquery.bootstrap.wizard.min.js" %}></script>
+<script src={% static "tracking/js/wizard-custom.js" %}></script>
 {% endblock custom-js %}
