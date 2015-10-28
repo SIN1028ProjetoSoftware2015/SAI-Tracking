@@ -11,17 +11,29 @@
 			
 			<!-- Bootstrap -->
 			<link href="{% static "tracking/css/bootstrap.min.css" %}" rel="stylesheet"/>
-			<link href="{% static "tracking/css/bootstrap-theme.min.css" %}" rel="stylesheet"/>
-			<link href="{% static "tracking/css/font-awesome.min.css"%}" rel="stylesheet"/>
-			<link href="{% static "tracking/css/misc.css"%}" rel="stylesheet"/>
-			<link href="{% static "tracking/css/main.css"%}" rel="stylesheet"/>
-			<link href="{% static "tracking/css/color-scheme.css"%}" rel="stylesheet"/>
-			<link href="{% static "tracking/css/responsive.css"%}" rel="stylesheet"/>
-			<link href="{% static "tracking/css/menu.css"%}" rel="stylesheet"/>
-			<link href="{% static "tracking/components/com_djmediatools/assets/picbox/css/picbox.css" %}" rel="stylesheet"/>
-			<link href="{% static "tracking/media/mod_languages/css/template.css"%}" rel="stylesheet"/>
+			 <!--Comentado e nada aconteceu -->
+     <!-- <link href="{% static "tracking/css/bootstrap-theme.min.css" %}" rel="stylesheet"/>-->
+			  <!--Configura o botão fl ao lado do buscar no site -->
+      <link href="{% static "tracking/css/font-awesome.min.css"%}" rel="stylesheet"/>
+		  <!--Comentado e nada aconteceu -->
+      	<!--<link href="{% static "tracking/css/misc.css"%}" rel="stylesheet"/>-->
+			
+      <!--Afeta as configurações do menu(barra azul) e menu com os logos da SAI-->
+      <link href="{% static "tracking/css/main.css"%}" rel="stylesheet"/>
+			 <!--Afeta as corres a cor azul do menu, com as laterais-->
+      <link href="{% static "tracking/css/color-scheme.css"%}" rel="stylesheet"/>
+			  <!--Afeta as responsividade-->
+      <link href="{% static "tracking/css/responsive.css"%}" rel="stylesheet"/>
+
+			  <!--Configuração do menu azul, barra inicio...-->
+      <link href="{% static "tracking/css/menu.css"%}" rel="stylesheet"/>
+			
+      <!--Comentado e nada aconteceu -->
+      <!--<link href="{% static "tracking/components/com_djmediatools/assets/picbox/css/picbox.css" %}" rel="stylesheet"/>			
+      <link href="{% static "tracking/media/mod_languages/css/template.css"%}" rel="stylesheet"/>
 			<link href="{% static "tracking/templates/padrao/css/extra.css "%} rel="stylesheet/>
-			<link href="{% static "tracking/css/geral.css" %}" rel="stylesheet"/>
+			<link href="{% static "tracking/css/geral.css" %}" rel="stylesheet"/>-->
+      <!-- Configura carossel das imagens-->
 			<link href="{% static "tracking/css/index.css" %}" rel="stylesheet"/>
 			{% block custom-css %}{% endblock custom-css %}
 		   
@@ -50,12 +62,14 @@
 											
 											    <div class="col-sm-9" style="padding: 18px">
 													<img  src="{% static "tracking/images/banner.png" %}" height="100" alt="">
-												   
-											    </div>
+                        
+												   </div>
+                           
 											</div>
 									    </div>
 									    <div class="col-sm-5 header-right">
-											<ul class="small-links">
+											<!--Comentado devido não estar funcionando-->
+                      <!--<ul class="small-links">
 												  <li>
 													<a id="fontDefault" href="#">A</a>
 												  </li>
@@ -67,8 +81,9 @@
 												  <li>
 													<a id="fontSmall" href="#">A-</a>
 												  </li>
-											</ul>
-											
+											</ul>-->
+											<br>
+
 												<div class="search-form hidden-xs">
 													<form class="navbar-form search_form" role="search" method="get" action="http://w3.ufsm.br/sai/index.php/pt-br/index.php/component/search/">
 														<input type="search" name="searchword" class="form-control search_form" placeholder="Buscar no site"
@@ -173,26 +188,45 @@
 			<!-- /.site-footer -->
 			 
 			   
-			  
-			  <script src="{% static "tracking/site/arquivos/barra.js"%}" type="text/javascript"></script> <!-- segunda barra menu laranja -->
-			  <script src="{% static "tracking/templates/padrao/js/custom.js"%}" type="text/javascript"></script> <!-- primeira barra superior -->
-			  
+			  <!-- segunda barra menu laranja 
+			  <script src="{% static "tracking/site/arquivos/barra.js"%}" type="text/javascript"></script> -->
+        <!-- primeira barra superior 
+			  <script src="{% static "tracking/templates/padrao/js/custom.js"%}" type="text/javascript"></script> -->
+			  <!-- Jquery ajax googleapis -->
 			  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-			  <script src="{% static "tracking/js/bootstrap.min.js"%}"type="text/javascript"></script>
-			  <script src="{% static "tracking/js/jquery.min.js"%}"type="text/javascript"></script>
-			  <script src="{% static "tracking/templates/padrao/js/plugins.js"%}" type="text/javascript"></script>
-			  <script src="{% static "tracking/templates/padrao/js/menu.js"%}" type="text/javascript"></script> <!-- menu azul -->
-			  <script src="{% static "tracking/media/jui/js/jquery.min.js"%}" type="text/javascript"></script>
-			  <script src="{% static "tracking/media/jui/js/jquery-noconflict.js"%}" type="text/javascript"></script>
-			  <script src="{% static "tracking/media/jui/js/jquery-migrate.min.js"%}" type="text/javascript"></script>
-			  <script src="{% static "tracking/media/system/js/caption.js"%}" type="text/javascript"></script>
-			  <script src="{% static "tracking/media/system/js/mootools-core.js"%}" type="text/javascript"></script>
-			  <script src="{% static "tracking/media/system/js/core.js"%}" type="text/javascript"></script>
-			  <script src="{% static "tracking/components/com_djmediatools/assets/picbox/js/picbox.js"%}" type="text/javascript"></script>
-			  <script src="{% static "tracking/media/jui/js/bootstrap.min.js"%}" type="text/javascript"></script>
+         
+         <!--JS padrão do bootstrap -->
+        <script src="{% static "tracking/js/jquery.min.js"%}"type="text/javascript"></script>
+        <script src="{% static "tracking/js/bootstrap.min.js"%}"type="text/javascript"></script>
+      
+        <!--Comentado e aparentemente não afetou nada -->
+        <!--<script src="{% static "tracking/templates/padrao/js/plugins.js"%}" type="text/javascript"></script>-->
+       
+        <!-- menu azul -->
+			  <script src="{% static "tracking/templates/padrao/js/menu.js"%}" type="text/javascript"></script> 
+			  <!--JS padrão do bootstrap -->
+        <script src="{% static "tracking/media/jui/js/jquery.min.js"%}" type="text/javascript"></script>
+        <script src="{% static "tracking/media/jui/js/bootstrap.min.js"%}" type="text/javascript"></script>
+        
+        <!--Comentado e aparentemente não afetou nada -->
+			  <!-- <script src="{% static "tracking/media/jui/js/jquery-migrate.min.js"%}" type="text/javascript"></script>-->
+       
+        <!--Comentado e aparentemente não afetou nada -->
+			  <!-- <script src="{% static "tracking/media/system/js/caption.js"%}" type="text/javascript"></script>-->
+        
+        <!--Comentado e aparentemente não afetou nada -->
+			  <!--<script src="{% static "tracking/media/system/js/mootools-core.js"%}" type="text/javascript"></script>-->
+        
+        <!--Comentado e aparentemente não afetou nada -->			 
+        <!--<script src="{% static "tracking/media/system/js/core.js"%}" type="text/javascript"></script>-->
+        
+        <!--Comentado e aparentemente não afetou nada -->      
+			  <!-- <script src="{% static "tracking/components/com_djmediatools/assets/picbox/js/picbox.js"%}" type="text/javascript"></script>
 			  <script src="{% static "tracking/components/com_djmediatools/layouts/skitterSlideshow/js/jquery.skitter.min.js"%}" type="text/javascript"></script>
 			  <script src="{% static "tracking/components/com_djmediatools/layouts/skitterSlideshow/js/jquery.easing.1.3.js"%}" type="text/javascript"></script>
-			  <script src="{% static "tracking/components/com_djmediatools/layouts/skitterSlideshow/js/jquery.animate-colors-min.js"%}" type="text/javascript"></script>
+			  <script src="{% static "tracking/components/com_djmediatools/layouts/skitterSlideshow/js/jquery.animate-colors-min.js"%}" type="text/javascript"></script>-->
+
+  
 			  {% block custom-js %}{% endblock custom-js %}
 			   
 		</body>
