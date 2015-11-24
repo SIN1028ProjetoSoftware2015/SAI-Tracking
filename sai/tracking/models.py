@@ -1,39 +1,92 @@
 # -*- coding: utf-8 -*-
 from django.db import models
+from django import forms
 from django.contrib.auth.models import User
 
-class Country(models.Model):
+class Pais(models.Model):
     """This model represent all countries registered in APP"""
-    name = models.CharField(max_length=128, unique=True)
+    nome = models.CharField(max_length=128, unique=True)
 
     def __unicode__(self):
-        return self.name
+        return self.nome
 
     class Meta:
         verbose_name='País'
         verbose_name_plural='Países'
 
+class Instituicao(models.Model):
+    """ This class is used to store information about Universities """
+    nome = models.CharField(max_length=200)
+    endereco = models.CharField(max_length=50)
+    cidade = models.CharField(max_length=100)
+    pais = models.ForeignKey(Pais)
+    telefone = models.CharField(max_length=50)
+    contato = models.CharField(max_length=100)
+    contato_cargo = models.CharField(max_length=100)
+    email = models.EmailField(max_length=254)
 
-class UserProfile(models.Model):
-    """This class is used to add more fields to User Profile as Aluno"""
-    # Linking a UserProfile to a User model instance
-    user = models.OneToOneField(User)
-    # The aditional atttributes that we wish to include
-    profile_image = models.ImageField(upload_to='profile_images', blank=True)
-    birth_date = models.DateField()
-    mothers_name = models.CharField(max_length=200)
-    fathers_name = models.CharField(max_length=200)
-    birth_local = models.CharField(max_length=150)
-    nationality = models.ForeignKey(Country)
-    passport = models.CharField(max_length=50)
-    permanent_address = models.CharField(max_length=200)
-    permanent_phone = models.CharField(max_length=20)
-
-    # Override the __unicode__() method to return out something meaningful!
     def __unicode__(self):
-        return self.user.username
+        return self.nome
 
     class Meta:
-        verbose_name='Usuário'
-        verbose_name_plural='Usuários'
+        verbose_name='Instituição'
+        verbose_name_plural = 'Instituições'
 
+
+class Aluno(models.Model):
+    """ This class is used to store information about students """
+    nome = models.CharField(max_length=200);
+    # sobrenome = models.CharField(max_length=200)
+    # profile_image = models.ImageField(upload_to='profile_images', blank=True)
+    data_nascimento = models.DateField()
+    matricula = models.CharField(max_length=20)
+    endereco = models.CharField(max_length=200)
+    # numero = models.CharField(max_length=10)
+    # complemento = models.CharField(max_length=50)
+    # bairro = models.CharField(max_length=100)
+    cidade = models.CharField(max_length=100)
+    estado = models.CharField(max_length=5)
+    pais = models.ForeignKey(Pais)
+    telefone = models.CharField(max_length=20)
+    email = models.CharField(max_length=200)
+
+    def __unicode__(self):
+        return self.name
+
+
+class AlunoIn(Aluno):
+    """
+    Description: Model Description
+    """
+    nome_pai = models.CharField(max_length=200)
+    nome_mae = models.CharField(max_length=200)
+    local_nascimento = models.CharField(max_length=150)
+    cont_nome = models.CharField(max_length=200)
+    cont_parentesco = models.CharField(max_length=50)
+    cont_endereco = models.CharField(max_length=200)
+    cont_telefone = models.CharField(max_length=20)
+    cont_email = models.CharField(max_length=200)
+    instituicao_vinculo = models.ForeignKey(Instituicao)
+
+    def __unicode__(self):
+        return self.nome
+
+    class Meta:
+        verbose_name='Aluno estrangeiro'
+        verbose_name_plural = 'Alunos estrangeiros'
+
+
+
+class AlunoOut(Aluno):
+    """
+    Description: Model Description
+    """
+    contato_emerg = models.CharField(max_length=200)
+    curso_ufsm = models.CharField(max_length=70)
+
+    class Meta:
+        verbose_name='Aluno brasileiro'
+        verbose_name_plural = 'Alunos brasileiros'
+
+
+            

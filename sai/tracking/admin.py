@@ -1,6 +1,9 @@
 from django.contrib import admin
-from models import Country
-from models import UserProfile
+from .models import Pais, Instituicao, AlunoIn, AlunoOut
 
-admin.site.register(Country)
-admin.site.register(UserProfile)
+#from models import UserProfile
+
+admin.site.register(Pais)
+admin.site.register(Instituicao)
+admin.site.register(AlunoIn)
+admin.site.register(AlunoOut)

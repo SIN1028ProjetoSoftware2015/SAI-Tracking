@@ -2,45 +2,64 @@
 from __future__ import unicode_literals
 
 from django.db import models, migrations
-from django.conf import settings
 
 
 class Migration(migrations.Migration):
 
     dependencies = [
-        migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Country',
+            name='Aluno',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('name', models.CharField(unique=True, max_length=128)),
+                ('nome', models.CharField(max_length=200)),
+                ('data_nascimento', models.DateField()),
+                ('matricula', models.CharField(max_length=20)),
+                ('endereco', models.CharField(max_length=200)),
+                ('cidade', models.CharField(max_length=100)),
+                ('estado', models.CharField(max_length=5)),
+                ('telefone', models.CharField(max_length=20)),
+                ('email', models.CharField(max_length=200)),
+            ],
+        ),
+        migrations.CreateModel(
+            name='Instituicao',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('nome', models.CharField(max_length=200)),
+                ('endereco', models.CharField(max_length=50)),
+                ('cidade', models.CharField(max_length=100)),
+                ('telefone', models.CharField(max_length=50)),
+                ('contato', models.CharField(max_length=100)),
+                ('contato_cargo', models.CharField(max_length=100)),
+                ('email', models.EmailField(max_length=254)),
+            ],
+            options={
+                'verbose_name': 'Institui\xe7\xe3o',
+                'verbose_name_plural': 'Institui\xe7\xf5es',
+            },
+        ),
+        migrations.CreateModel(
+            name='Pais',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('nome', models.CharField(unique=True, max_length=128)),
             ],
             options={
                 'verbose_name': 'Pa\xeds',
                 'verbose_name_plural': 'Pa\xedses',
             },
         ),
-        migrations.CreateModel(
-            name='UserProfile',
-            fields=[
-                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('profile_image', models.ImageField(upload_to=b'profile_images', blank=True)),
-                ('birth_date', models.DateField()),
-                ('mothers_name', models.CharField(max_length=200)),
-                ('fathers_name', models.CharField(max_length=200)),
-                ('birth_local', models.CharField(max_length=150)),
-                ('passport', models.CharField(max_length=50)),
-                ('permanent_address', models.CharField(max_length=200)),
-                ('permanent_phone', models.CharField(max_length=20)),
-                ('nationality', models.ForeignKey(to='tracking.Country')),
-                ('user', models.OneToOneField(to=settings.AUTH_USER_MODEL)),
-            ],
-            options={
-                'verbose_name': 'Usu\xe1rio',
-                'verbose_name_plural': 'Usu\xe1rios',
-            },
+        migrations.AddField(
+            model_name='instituicao',
+            name='pais',
+            field=models.ForeignKey(to='tracking.Pais'),
+        ),
+        migrations.AddField(
+            model_name='aluno',
+            name='pais',
+            field=models.ForeignKey(to='tracking.Pais'),
         ),
     ]

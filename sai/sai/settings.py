@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Django settings for sai project.
 
@@ -37,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rosetta',
     'tracking',
 )
 
@@ -49,6 +51,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 )
 
 ROOT_URLCONF = 'sai.urls'
@@ -82,6 +85,14 @@ DATABASES = {
     }
 }
 
+# Application languages
+LANGUAGES = (
+    ('pt-br', u'Português Brasileiro'),
+    ('en', u'English'),
+)
+
+# Path to language files
+LOCALE_PATHS = (os.path.join(BASE_DIR, 'locale'),)
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/

@@ -22,4 +22,5 @@ urlpatterns = [
     # url(r'^$', include('tracking.urls')),
 	url(r'^tracking/', include('tracking.urls')),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^rosetta/', include('rosetta.urls')),
 ]
