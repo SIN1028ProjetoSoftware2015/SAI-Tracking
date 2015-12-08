@@ -9,6 +9,12 @@ class Pais(models.Model):
     def __unicode__(self):
         return self.nome
 
+    def get_alunos_modalidade(self, modalidade=None):
+        if modalidade is not None:
+            return Intercambio.objects.filter(modalidade=modalidade, pais=self).count()
+        else:
+            return None
+
     class Meta:
         verbose_name='País'
         verbose_name_plural='Países'
@@ -49,6 +55,7 @@ class Aluno(models.Model):
     pais = models.ForeignKey(Pais, null=True, blank=True)
     telefone = models.CharField(max_length=20, null = True, blank=True)
     email = models.CharField(max_length=200)
+    passaporte = models.CharField(max_length=20, null=True, blank=True)
 
     #Overriding
     def save(self, *args, **kwargs):
@@ -59,7 +66,7 @@ class Aluno(models.Model):
             l_name  = parts[-1]
             username =  f_name + '_' + l_name
             userpass = User.objects.make_random_password()
-            new_user = User.objects.create_user(username, self.email, userpass, 
+            new_user = User.objects.create_user(username, self.email, userpass,
                 first_name=f_name, last_name=l_name)
             self.user = new_user
         super(Aluno, self).save(*args, **kwargs)
@@ -89,7 +96,6 @@ class AlunoIn(Aluno):
     class Meta:
         verbose_name='Aluno estrangeiro'
         verbose_name_plural = 'Alunos estrangeiros'
-
 
 
 class AlunoOut(Aluno):
@@ -158,6 +164,6 @@ class Intercambio(models.Model):
     get_universidade_destino.short_description = 'Universidade'
 
     def __unicode__(self):
-        return ''.join([self.get_aluno(), 
-            ' | ', self.get_programa(), 
+        return ''.join([self.get_aluno(),
+            ' | ', self.get_programa(),
             ' | ', self.get_universidade_destino()])

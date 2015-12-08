@@ -1,14 +1,15 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render
-from django.http import HttpResponse
-from django.template import RequestContext, loader
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.contrib import messages
 from django.http import HttpResponseRedirect, HttpResponse
+from django.template import RequestContext, loader
 from django.utils.translation import ugettext as _
-from models import Aluno, Pais
-from forms import AlunoForm
+
+from models import Aluno, AlunoIn, AlunoOut, Pais, Instituicao
+from forms import AlunoInForm, AlunoInContatoForm
 
 # Create your views here.
 def index(request):
@@ -21,23 +22,59 @@ def map_in(request):
 def map_out(request):
     return render(request, 'tracking/map-out.html')
 
+def json_map_out(request):
+    # for pais in Pais.objects.all():
+    return HttpResponse('Unimplemented!')
+
+
+"""
+Função para salvar os dados pessoais para AlunoIn
+"""
 @login_required
 def form_in(request):
     # if this is a POST Request, process the form data
+    context = None
+    aluno = AlunoIn.objects.get(user=request.user)
+    paises = Pais.objects.all()
+    context = {'paises': paises, 'aluno':aluno}
     if request.method == 'POST':
-        form = AlunoForm(request.POST, instance=request.user.profile)
+        form = AlunoInForm(request.POST, instance=aluno)
         if form.is_valid():
-            return HttpResponse(u"Form válido")
-        else:
-            return HttpResponse(u"Form inválido")
-    # if this is a GET requeest show de form with data
-    else:
-        u = User.objects.get(username=request.user.username)
-        data_aluno = u.aluno
-        paises = Pais.objects.all()
-        print paises
-        # if a GET request, show the form
-        return render(request, 'tracking/form-in-step1.html', {'aluno': data_aluno, 'paises':paises})
+            form.save()
+            messages.add_message(request, messages.INFO, 'Dados pessoais atualizados.')
+    # request via GET method
+    return render(request, 'tracking/form-in-step1.html', context)
+
+"""
+Função para salvar os dados de contato para o AlunoIn
+"""
+@login_required
+def form_in_contato(request):
+    rcontext = None
+    aluno = AlunoIn.objects.get(user=request.user)
+    context = {'aluno':aluno}
+    if request.method == 'POST':
+        form = AlunoInContatoForm(request.POST, instance=aluno)
+        print form.errors
+        if form.is_valid():
+            form.save()
+            messages.add_message(request, messages.INFO, 'Dados de contato atualizados.')
+    # request via GET method
+    return render(request, 'tracking/form-in-step2.html', context)
+
+def form_in_instituicao(request):
+    rcontext = None
+    aluno = AlunoIn.objects.get(user=request.user)
+    instituicoes = Instituicao.objects.all()
+    context = {'aluno':aluno, 'instituicoes':instituicoes}
+    if request.method == 'POST':
+        instituicao = Instituicao.objects.get(pk=request.POST.get("instituicao_vinculo"))
+        aluno.instituicao_vinculo = instituicao
+        aluno.save
+        messages.add_message(request, messages.INFO, 'Instituição de vínculo atualizada.')
+    # request via GET method
+    return render(request, 'tracking/form-in-step3.html', context)
+
 
 def form_out(request):
     return render(request, 'tracking/form-out.html')

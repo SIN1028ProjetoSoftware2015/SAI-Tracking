@@ -17,13 +17,13 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('nome', models.CharField(max_length=200)),
-                ('data_nascimento', models.DateField(null=True)),
+                ('data_nascimento', models.DateField(null=True, blank=True)),
                 ('matricula', models.CharField(max_length=20, null=True, blank=True)),
                 ('endereco', models.CharField(max_length=200, null=True, blank=True)),
                 ('cidade', models.CharField(max_length=100, null=True, blank=True)),
                 ('estado', models.CharField(max_length=5, null=True, blank=True)),
                 ('telefone', models.CharField(max_length=20, null=True, blank=True)),
-                ('email', models.CharField(max_length=200, null=True, blank=True)),
+                ('email', models.CharField(max_length=200)),
             ],
         ),
         migrations.CreateModel(

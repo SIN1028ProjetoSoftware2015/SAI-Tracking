@@ -8,20 +8,31 @@
   <div class="row">
     <div class="col-md-12">
       <div id="pagina-cabecalho" class="page-header">
-        <h1>{% trans "Alunos estrangeiros" %}</h1>
+        <h1>{% trans "Aluno estrangeiro" %} <small>Dados pessoais</small></h1>
       </div>
     </div>
   </div>
+
+  {% if messages %}
   <div class="row">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-12">
+    {% for message in messages %}
+    <div class="alert alert-success alert-dismissible" role="alert">{{ message }}</div>
+    {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  <div class="row">
+    {% include "tracking/menu-form-in.html" %}
+    <div class="col-md-8">
       <form action="" class="form-horizontal" method="post">
         {% csrf_token %}
-        <h3></h3>
         <!-- Name-->
         <div class="form-group">
-          <label class="col-md-4 control-label" for="name">{% trans "Nome" %}:</label>
+          <label class="col-md-4 control-label" for="nome">{% trans "Nome" %}:</label>
           <div class="col-md-8">
-          <input id="name" name="name" type="text" placeholder="Informe seu nome sem abreviações" class="form-control input-md" required="" value="{{ aluno.nome }}">
+          <input id="nome" name="nome" type="text" placeholder="Informe seu nome sem abreviações" class="form-control input-md" required="" value="{{ aluno.nome }}">
           </div>
         </div>
 
@@ -35,25 +46,25 @@
 
         <!-- Text input-->
         <div class="form-group">
-          <label class="col-md-4 control-label" for="birth_date">{% trans "Data de nascimento" %}</label>
+          <label class="col-md-4 control-label" for="data_nascimento">{% trans "Data de nascimento" %}</label>
           <div class="col-md-8">
-            <input id="birth_date" name="birth_date" type="text" placeholder="Informe sua data de nascimento" class="form-control input-md" required="" value="{{ aluno.data_nascimento|default:"" }}">
+            <input id="data_nascimento" name="data_nascimento" type="text" placeholder="Informe sua data de nascimento" class="form-control input-md" required="" value="{{ aluno.data_nascimento|date:"d/m/Y"|default:"" }}">
           </div>
         </div>
 
         <!-- Text input-->
         <div class="form-group">
-          <label class="col-md-4 control-label" for="filiacao">{% trans "Nome do pai" %}</label>
+          <label class="col-md-4 control-label" for="nome_pai">{% trans "Nome do pai" %}</label>
           <div class="col-md-8">
-            <input id="filiacao" name="filiacao" type="text" placeholder="Informe o nome do seu pai sem abreviações" class="form-control input-md" value="{{ aluno.nome_pai|default:""}}">
+            <input id="nome_pai" name="nome_pai" type="text" placeholder="Informe o nome do seu pai sem abreviações" class="form-control input-md" value="{{ aluno.nome_pai|default:""}}">
           </div>
         </div>
 
         <!-- Text input-->
         <div class="form-group">
-          <label class="col-md-4 control-label" for="">{% trans "Nome da mãe" %}</label>
+          <label class="col-md-4 control-label" for="nome_mae">{% trans "Nome da mãe" %}</label>
           <div class="col-md-8">
-            <input id="" name="" type="text" placeholder="Informe o nome da sua mãe sem abreviações" class="form-control input-md" required="" value="{{ aluno.nome_mae|default:""}}">
+            <input id="nome_mae" name="nome_mae" type="text" placeholder="Informe o nome da sua mãe sem abreviações" class="form-control input-md" required="" value="{{ aluno.nome_mae|default:""}}">
           </div>
         </div>
 
@@ -67,11 +78,11 @@
 
         <!-- Text input-->
         <div class="form-group">
-          <label class="col-md-4 control-label" for="país">{% trans "País" %}</label>
+          <label class="col-md-4 control-label" for="pais">{% trans "País" %}</label>
           <div class="col-md-8">
-            <select id="país" name="pais" placeholder="Selecione o seu país de origem" class="form-control input-md" required="">
+            <select id="pais" name="pais" placeholder="Selecione o seu país de origem" class="form-control input-md" required="">
               {% for pais in paises %}
-              <option value="{{pais.id}}">{{pais.nome}}</option>
+              <option value="{{pais.id}}" {% if aluno.pais == pais %}selected="selected"{% endif %}>{{pais.nome}}</option>
               {% endfor %}
             </select>
           </div>
@@ -79,33 +90,49 @@
 
         <!-- Text input-->
         <div class="form-group">
-          <label class="col-md-4 control-label" for="num_passaporte">{% trans "Número do passaporte" %}</label>
+          <label class="col-md-4 control-label" for="passaporte">{% trans "Número do passaporte" %}</label>
           <div class="col-md-8">
-            <input id="num_passaporte" name="num_passaporte" type="text" placeholder="" class="form-control input-md" required="" value="{{aluno.}}">
+            <input id="passaporte" name="passaporte" type="text" placeholder="Número do passaporte" class="form-control input-md" required="" value="{{aluno.passaporte|default:""}}">
           </div>
         </div>
 
         <!-- Text input-->
         <div class="form-group">
-          <label class="col-md-4 control-label" for="endereco">Endereço permanente</label>
+          <label class="col-md-4 control-label" for="endereco">{% trans "Endereço permanente" %}</label>
           <div class="col-md-8">
-            <input id="endereco" name="endereco" type="text" placeholder="" class="form-control input-md" required="">
+            <input id="endereco" name="endereco" type="text" placeholder="Endereço de origem" class="form-control input-md" required="" value="{{ aluno.endereco|default:"" }}">
           </div>
         </div>
 
         <!-- Text input-->
         <div class="form-group">
-          <label class="col-md-4 control-label" for="email">E-mail</label>
+          <label class="col-md-4 control-label" for="cidade">{% trans "Cidade" %}</label>
           <div class="col-md-8">
-            <input id="email" name="email" type="text" placeholder="" class="form-control input-md">
+            <input id="cidade" name="cidade" type="text" placeholder="Cidade de origem" class="form-control input-md" required="" value="{{ aluno.cidade|default:"" }}">
           </div>
         </div>
 
         <!-- Text input-->
         <div class="form-group">
-          <label class="col-md-4 control-label" for="telefone">Telefone</label>
+          <label class="col-md-4 control-label" for="estado">{% trans "Estado / Província" %}</label>
           <div class="col-md-8">
-            <input id="telefone" name="telefone" type="text" placeholder="" class="form-control input-md" required="">
+            <input id="estado" name="estado" type="text" placeholder="Estado ou província de origem" class="form-control input-md" required="" value="{{ aluno.estado|default:"" }}">
+          </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="email">{% trans "E-mail" %}</label>
+          <div class="col-md-8">
+            <input id="email" name="email" type="text" placeholder="Endereço de e-mail" class="form-control input-md" value="{{ aluno.email|default:"" }}">
+          </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="telefone">{% trans "Telefone" %}</label>
+          <div class="col-md-8">
+            <input id="telefone" name="telefone" type="text" placeholder="Número do telefone" class="form-control input-md" required="" value="{{ aluno.telefone|default:"" }}">
           </div>
         </div>
 
