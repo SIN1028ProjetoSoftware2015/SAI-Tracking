@@ -12,4 +12,5 @@ urlpatterns = [
 	url(r'^form-out$', views.form_out, name='form_out'),
 	# login
 	url(r'^login', views.user_login, name='user_login'),
+	# url(r'^logout', views.user_logout, name='user_logout'),
 ]

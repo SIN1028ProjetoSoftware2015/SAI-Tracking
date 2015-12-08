@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from tracking.views import index
+from tracking.views import index, login
 
 urlpatterns = [
     url(r'^$', index, name='index2'),
@@ -23,4 +23,6 @@ urlpatterns = [
 	url(r'^tracking/', include('tracking.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^rosetta/', include('rosetta.urls')),
+
+    url(r'^accounts/login', login, name='user_login2')
 ]
